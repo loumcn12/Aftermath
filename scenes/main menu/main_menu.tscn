@@ -1,0 +1,80 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdtp3c80v85go"]
+
+[ext_resource type="Script" uid="uid://f8fo33ievb68" path="res://scripts/main_menu.gd" id="1_cbjxn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cbjxn"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_8w606"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cbjxn")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -16.0
+offset_right = 74.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="startbutton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="optionsbutton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="quitbutton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -260.0
+offset_top = 90.0
+offset_right = 260.0
+offset_bottom = 192.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Aftermath"
+label_settings = SubResource("LabelSettings_cbjxn")
+vertical_alignment = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Version 0.0.1"
+label_settings = SubResource("LabelSettings_8w606")
+vertical_alignment = 2
+
+[connection signal="pressed" from="VBoxContainer/startbutton" to="." method="_on_startbutton_pressed"]
+[connection signal="pressed" from="VBoxContainer/optionsbutton" to="." method="_on_optionsbutton_pressed"]
+[connection signal="pressed" from="VBoxContainer/quitbutton" to="." method="_on_quitbutton_pressed"]
