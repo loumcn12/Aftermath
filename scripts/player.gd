@@ -50,7 +50,6 @@ var direction = Vector3.ZERO
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-
 func _ready():
 	# Make the mouse cursor invisible and locked to the centre of the screen
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -164,8 +163,5 @@ func _physics_process(delta):
 	if player.position.y < -10 || Input.is_physical_key_pressed(KEY_R):
 		get_tree().reload_current_scene()
 	
-	# Quits the game if the escape key is pressed
-	if Input.is_action_pressed("escape"):
-		get_tree().quit()
 
 	move_and_slide()
