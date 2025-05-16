@@ -2,6 +2,10 @@ extends Control
 @onready var quitbutton = $MarginContainer/VBoxContainer/QuitGameButton
 @onready var main = $"../"
 
+func _ready():
+	if (OS.get_name() != "Windows") and (OS.get_name() != "Linux"):
+		quitbutton.visible = false
+
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("escape") and main.paused:
 		main.pauseMenu()
