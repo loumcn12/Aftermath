@@ -1,6 +1,6 @@
 extends Control
 @onready var fullscreen = $VBoxContainer/fullscreensetting/fullscreenbutton
-
+@onready var windowmode = $VBoxContainer/windowmodesetting/OptionButton
 # Calls when the scene is loaded
 func _ready() -> void:
 	# Disables the fullscreen button for web browsers (Handled separately)
@@ -15,6 +15,13 @@ func _physics_process(_delta: float) -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		
+	if windowmode.selected == 0:
+		Globalscript.mousemode = Input.MOUSE_MODE_VISIBLE
+		Input.set_mouse_mode(Globalscript.mousemode)
+	else:
+		Globalscript.mousemode = Input.MOUSE_MODE_CONFINED
+		Input.set_mouse_mode(Globalscript.mousemode)
 
 # Returns the user to the main menu
 func _on_back_button_pressed() -> void:

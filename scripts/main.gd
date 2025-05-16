@@ -8,14 +8,14 @@ func _physics_process(_delta: float) -> void:
 		pauseMenu()
 		
 func pauseMenu():
+
 	if paused:
 		pause_menu.hide()
 		get_tree().paused = false
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	else:
 		pause_menu.show()
 		get_tree().paused = true
-		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+		Input.set_mouse_mode(Globalscript.mousemode)
 	await get_tree().create_timer(0.1).timeout 
 	paused = !paused
 	

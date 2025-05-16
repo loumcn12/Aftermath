@@ -52,7 +52,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
 	# Make the mouse cursor invisible and locked to the centre of the screen
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	pass
 	
 func _input(event):
 	# Make the camera movement match mouse movement
@@ -63,7 +63,7 @@ func _input(event):
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(80))
 
 func _physics_process(delta):
-	
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")
 	

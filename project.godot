@@ -15,6 +15,10 @@ run/main_scene="uid://cdtp3c80v85go"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://tkgydxi7db6h"
 
+[autoload]
+
+Globalscript="*res://scripts/globalscript.gd"
+
 [input]
 
 backward={

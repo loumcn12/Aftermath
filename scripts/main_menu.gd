@@ -2,7 +2,7 @@ extends Control
 @onready var quitbutton = $VBoxContainer/quitbutton
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+	Input.set_mouse_mode(Globalscript.mousemode)
 	if (OS.get_name() != "Windows") and (OS.get_name() != "Linux"):
 		quitbutton.visible = false
 		

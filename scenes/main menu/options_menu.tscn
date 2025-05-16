@@ -35,6 +35,21 @@ text = "Fullscreen Mode"
 [node name="fullscreenbutton" type="CheckButton" parent="VBoxContainer/fullscreensetting"]
 layout_mode = 2
 
+[node name="windowmodesetting" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="windowmodelabel" type="Label" parent="VBoxContainer/windowmodesetting"]
+layout_mode = 2
+text = "Window Mode     "
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/windowmodesetting"]
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Captured"
+popup/item_1/id = 1
+
 [node name="BackButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Back"
