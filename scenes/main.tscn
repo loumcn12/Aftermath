@@ -1,9 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://djunwlie6gikb"]
+[gd_scene load_steps=10 format=3 uid="uid://djunwlie6gikb"]
 
 [ext_resource type="Texture2D" uid="uid://cwl4jn6tuy0pb" path="res://assets/textures/dev/grids/Dark/texture_07.png" id="1_qyfli"]
 [ext_resource type="Script" uid="uid://dqoh3msg73gs4" path="res://scripts/main.gd" id="1_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://mfmt5fpbaura" path="res://assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="2_76w8b"]
-[ext_resource type="Script" uid="uid://bw1balal8eq6t" path="res://scripts/player.gd" id="3_ob08u"]
+[ext_resource type="PackedScene" uid="uid://b5u6tg7siuhu3" path="res://scenes/player.tscn" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cope3wve2dub1" path="res://scenes/pause_menu.tscn" id="5_tefeu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ypqe"]
@@ -21,11 +21,6 @@ background_mode = 2
 sky = SubResource("Sky_xdhe3")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tevmw"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m04g1"]
-height = 1.2
 
 [node name="world" type="Node3D"]
 script = ExtResource("1_tbgi4")
@@ -71,31 +66,8 @@ environment = SubResource("Environment_7jrki")
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="player" type="CharacterBody3D" parent="."]
-script = ExtResource("3_ob08u")
-
-[node name="standing_collision_shape" type="CollisionShape3D" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_tevmw")
-
-[node name="crouching_collision_shape" type="CollisionShape3D" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.602376, 0)
-shape = SubResource("CapsuleShape3D_m04g1")
-disabled = true
-
-[node name="uncrouch_check" type="RayCast3D" parent="player"]
-target_position = Vector3(0, 2, 0)
-
-[node name="neck" type="Node3D" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
-
-[node name="Head" type="Node3D" parent="player/neck"]
-
-[node name="eyes" type="Node3D" parent="player/neck/Head"]
-transform = Transform3D(1, 0, 0, 0, 0.994656, -0.103244, 0, 0.103244, 0.994656, 0, 0, 0)
-
-[node name="Camera3D" type="Camera3D" parent="player/neck/Head/eyes"]
-
 [node name="PauseMenu" parent="." instance=ExtResource("5_tefeu")]
 process_mode = 2
 visible = false
+
+[node name="player" parent="." instance=ExtResource("4_tbgi4")]

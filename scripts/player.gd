@@ -22,6 +22,10 @@ var walking = false
 var sprinting = false
 var crouching = false
 
+# Stats
+
+@export var Health = 100
+
 # Head bobbing vars
 
 const head_bobbing_sprinting_speed = 22.0
@@ -54,6 +58,9 @@ func _ready():
 	# Make the mouse cursor invisible and locked to the centre of the screen
 	pass
 	
+func reset():
+	get_tree().reload_current_scene()
+	
 func _input(event):
 	# Make the camera movement match mouse movement
 	if event is InputEventMouseMotion:
@@ -61,6 +68,10 @@ func _input(event):
 		rotate_y(deg_to_rad(-event.relative.x * mouse_sens))
 		head.rotate_x(deg_to_rad(-event.relative.y * mouse_sens))
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(80))
+	if Input.is_action_just_pressed("DamageTest"):
+		_Damage(20)
+	if Input.is_action_just_pressed("reset"):
+		reset()
 
 func _physics_process(delta):
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -160,8 +171,13 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, current_speed)
 	
 	# Reset the scene if prompted or if player falls out of world
-	if player.position.y < -10 || Input.is_physical_key_pressed(KEY_R):
-		get_tree().reload_current_scene()
+	
 	
 
 	move_and_slide()
+
+
+func _Damage(Damage: float) -> void:
+	Health -= Damage
+	if Health <= 0:
+		reset()

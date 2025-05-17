@@ -34,6 +34,20 @@ text = "Fullscreen Mode"
 
 [node name="fullscreenbutton" type="CheckButton" parent="VBoxContainer/fullscreensetting"]
 layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+
+[node name="crosshairsetting" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="crosshairlabel" type="Label" parent="VBoxContainer/crosshairsetting"]
+layout_mode = 2
+text = "Enable Crosshair"
+
+[node name="crosshairbutton" type="CheckButton" parent="VBoxContainer/crosshairsetting"]
+layout_mode = 2
+size_flags_horizontal = 3
+button_pressed = true
 
 [node name="windowmodesetting" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2

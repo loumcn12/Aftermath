@@ -1,6 +1,8 @@
 extends Control
 @onready var fullscreen = $VBoxContainer/fullscreensetting/fullscreenbutton
 @onready var windowmode = $VBoxContainer/windowmodesetting/OptionButton
+@onready var crosshair = $VBoxContainer/crosshairsetting/crosshairbutton
+
 # Calls when the scene is loaded
 func _ready() -> void:
 	# Disables the fullscreen button for web browsers (Handled separately)
@@ -22,6 +24,11 @@ func _physics_process(_delta: float) -> void:
 	else:
 		Globalscript.mousemode = Input.MOUSE_MODE_CONFINED
 		Input.set_mouse_mode(Globalscript.mousemode)
+		
+	if crosshair.button_pressed:
+		Globalscript.crosshair = true
+	else:
+		Globalscript.crosshair = false
 
 # Returns the user to the main menu
 func _on_back_button_pressed() -> void:
