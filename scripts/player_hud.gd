@@ -4,11 +4,14 @@ extends CanvasLayer
 @onready var HealthBar: ProgressBar = $Control/ProgressBar
 @onready var crosshair = $Control/Crosshair
 
-func _ready() -> void:
+func _crosshair():
 	if Globalscript.crosshair:
 		crosshair.visible = true
 	else:
 		crosshair.visible = false
+
+func _ready() -> void:
+	_crosshair()
 		
 
 func _process(_delta: float) -> void:

@@ -56,7 +56,8 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
 	# Make the mouse cursor invisible and locked to the centre of the screen
-	pass
+	if OS.get_name() == "MacOS":
+		OS.crash("Error 404 - User's brain not found")
 	
 func reset():
 	get_tree().reload_current_scene()
