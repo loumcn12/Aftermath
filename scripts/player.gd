@@ -12,17 +12,17 @@ extends CharacterBody3D
 
 # Speed variables
 var current_speed = 5.0
-@export var walking_speed = 5.0
-@export var sprinting_speed = 8.0
-@export var crouching_speed = 3.0
+const walking_speed = 5.0
+const sprinting_speed = 8.0
+const crouching_speed = 3.0
 
 
 # Stamina Variables
 
-@export var stamina = Globalscript.globalStamina
-@export var WalkRecharge = 1
-@export var CrouchRecharge = 2
-@export var SprintDischarge = 1
+var stamina = Globalscript.globalStamina
+const WalkRecharge = 15
+const CrouchRecharge = 50
+const SprintDischarge = 25
 
 # States
 
@@ -32,7 +32,7 @@ var crouching = false
 
 # Stats
 
-@export var Health = 100
+var Health = 100
 
 # Head bobbing vars
 
@@ -49,7 +49,7 @@ var head_bobbing_index = 0.0
 var head_bobbing_current_intensity = 0.0
 
 # Dimension variables
-@export var jump_velocity = 4.5
+var jump_velocity = 4.5
 var lerp_speed = 10.0
 var air_lerp_speed = 3.0
 var crouching_depth = -0.5
@@ -57,7 +57,7 @@ var player_height = 1.8
 
 # Input variables
 var direction = Vector3.ZERO
-@export var mouse_sens = 0.25
+const mouse_sens = 0.25
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -144,12 +144,14 @@ func _physics_process(delta):
 		
 		
 	# Handle Stamina
-	if sprinting and (stamina > 1):
-		stamina = stamina - SprintDischarge
-	elif walking and (stamina <= 100):
-		stamina = stamina + WalkRecharge
+	if input_dir != Vector2.ZERO:
+		if sprinting and (stamina > 1):
+			stamina = stamina - (SprintDischarge * 0.01)
+			
+	if (walking or (sprinting and input_dir == Vector2.ZERO)) and (stamina <= 100):
+		stamina = stamina + (WalkRecharge * 0.01)
 	elif crouching and (stamina <= 100):
-		stamina = stamina + CrouchRecharge
+		stamina = stamina + (CrouchRecharge * 0.01)
 	if stamina < 1:
 		stamina = 1
 	elif stamina > 100:
