@@ -32,18 +32,23 @@ layout_mode = 2
 [node name="GamePausedLabel" type="Label" parent="PauseContainer/VBoxContainer"]
 layout_mode = 2
 text = "Game Paused"
+horizontal_alignment = 1
 
 [node name="ResumeButton" type="Button" parent="PauseContainer/VBoxContainer"]
 layout_mode = 2
-text = "Resume"
+text = "Resume Game"
 
 [node name="RestartButton" type="Button" parent="PauseContainer/VBoxContainer"]
 layout_mode = 2
-text = "Restart"
+text = "Restart Level"
 
 [node name="MenuButton" type="Button" parent="PauseContainer/VBoxContainer"]
 layout_mode = 2
-text = "Options"
+text = "Options Menu"
+
+[node name="ReturntoMenu" type="Button" parent="PauseContainer/VBoxContainer"]
+layout_mode = 2
+text = "Return to Main Menu"
 
 [node name="QuitGameButton" type="Button" parent="PauseContainer/VBoxContainer"]
 layout_mode = 2
@@ -66,4 +71,5 @@ size_flags_vertical = 4
 [connection signal="pressed" from="PauseContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PauseContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="PauseContainer/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="PauseContainer/VBoxContainer/ReturntoMenu" to="." method="_on_returnto_menu_pressed"]
 [connection signal="pressed" from="PauseContainer/VBoxContainer/QuitGameButton" to="." method="_on_quit_game_button_pressed"]

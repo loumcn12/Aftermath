@@ -1,8 +1,9 @@
 extends CanvasLayer
 
 @onready var player: CharacterBody3D = $".."
-@onready var HealthBar: ProgressBar = $Control/ProgressBar
+@onready var HealthBar: ProgressBar = $Control/VBoxContainer/HealthBar
 @onready var crosshair = $Control/Crosshair
+@onready var StaminaBar = $Control/VBoxContainer/StaminaBar
 
 func _crosshair():
 	if Globalscript.crosshair:
@@ -16,4 +17,4 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	HealthBar.value = player.Health
-	
+	StaminaBar.value = Globalscript.globalStamina

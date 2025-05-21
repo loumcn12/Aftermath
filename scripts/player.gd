@@ -16,6 +16,14 @@ var current_speed = 5.0
 @export var sprinting_speed = 8.0
 @export var crouching_speed = 3.0
 
+
+# Stamina Variables
+
+@export var stamina = Globalscript.globalStamina
+@export var WalkRecharge = 1
+@export var CrouchRecharge = 2
+@export var SprintDischarge = 1
+
 # States
 
 var walking = false
@@ -79,12 +87,8 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")
 	
-	if Input.is_physical_key_pressed(KEY_L):
-		position.y = lerp(position.y, position.y + 0.5, delta*lerp_speed)	
-		
-	
 	# Handle crouching and sprinting
-	if (Input.is_action_pressed("crouch") && is_on_floor()):
+	if (Input.is_action_pressed("crouch") and is_on_floor()):
 		
 		# Crouching
 		
@@ -107,7 +111,7 @@ func _physics_process(delta):
 		standing_collision_shape.disabled = false
 		crouching_collision_shape.disabled = true
 		
-		if Input.is_action_pressed("sprint"):
+		if Input.is_action_pressed("sprint") and (stamina > 1):
 			
 			# Sprinting
 			
@@ -138,6 +142,21 @@ func _physics_process(delta):
 		head_bobbing_current_intensity = head_bobbing_crouching_intensity
 		head_bobbing_index += head_bobbing_crouching_speed * delta
 		
+		
+	# Handle Stamina
+	if sprinting and (stamina > 1):
+		stamina = stamina - SprintDischarge
+	elif walking and (stamina <= 100):
+		stamina = stamina + WalkRecharge
+	elif crouching and (stamina <= 100):
+		stamina = stamina + CrouchRecharge
+	if stamina < 1:
+		stamina = 1
+	elif stamina > 100:
+		stamina = 100
+		
+	Globalscript.globalStamina = stamina
+	
 	if is_on_floor() && input_dir != Vector2.ZERO:
 		head_bobbing_vector.y = sin(head_bobbing_index)
 		head_bobbing_vector.x = sin(head_bobbing_index/2)+0.5
@@ -153,7 +172,7 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor() and (stamina > 1):
 		velocity.y = jump_velocity
 	
 

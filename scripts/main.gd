@@ -5,6 +5,11 @@ extends Node3D
 @onready var player = $player
 var paused = false
 
+func _ready() -> void:
+	pause_menu.hide()
+	get_tree().paused = false
+	hud.visible = true
+	paused = false
 
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("escape"):
