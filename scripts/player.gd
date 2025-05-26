@@ -20,9 +20,10 @@ const crouching_speed = 3.0
 # Stamina Variables
 
 var stamina = Globalscript.globalStamina
-const WalkRecharge = 15
-const CrouchRecharge = 50
-const SprintDischarge = 25
+const WalkRecharge = 10
+const CrouchRecharge = 30
+const SprintDischarge = 50
+const BaseRecharge = 20
 
 # States
 
@@ -67,7 +68,9 @@ func _ready():
 	if OS.get_name() == "MacOS":
 		OS.crash("Error 404 - User's brain not found")
 	
+	
 func reset():
+	Globalscript.globalStamina = 100
 	get_tree().reload_current_scene()
 	
 func _input(event):
@@ -142,16 +145,21 @@ func _physics_process(delta):
 		head_bobbing_current_intensity = head_bobbing_crouching_intensity
 		head_bobbing_index += head_bobbing_crouching_speed * delta
 		
-		
+	
 	# Handle Stamina
 	if input_dir != Vector2.ZERO:
 		if sprinting and (stamina > 1):
 			stamina = stamina - (SprintDischarge * 0.01)
 			
-	if (walking or (sprinting and input_dir == Vector2.ZERO)) and (stamina <= 100):
+	if (walking or (sprinting and input_dir == Vector2.ZERO)) and (stamina <= 100) and !Input.is_action_pressed("sprint"):
 		stamina = stamina + (WalkRecharge * 0.01)
-	elif crouching and (stamina <= 100):
+	
+	elif crouching and (stamina <= 100) and !Input.is_action_pressed("sprint"):
 		stamina = stamina + (CrouchRecharge * 0.01)
+	
+	if input_dir == Vector2.ZERO and stamina <= 100 and !Input.is_action_pressed("sprint"):
+		stamina = stamina + (BaseRecharge * 0.01)
+	
 	if stamina < 1:
 		stamina = 1
 	elif stamina > 100:

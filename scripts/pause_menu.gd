@@ -27,6 +27,7 @@ func _on_resume_button_pressed() -> void:
 	main.pauseMenu()
 
 func _on_restart_button_pressed() -> void:
+	Globalscript.globalStamina = 100
 	main.pauseMenu()
 	get_tree().reload_current_scene()	
 	
