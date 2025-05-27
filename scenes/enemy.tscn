@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://dt4cwmc0uynan"]
+
+[ext_resource type="Script" uid="uid://bnlilythjcoyg" path="res://scripts/base_enemy.gd" id="1_7p1mj"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_md0e3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4ra3w"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5uy6h"]
+radius = 4.238
+
+[node name="Enemy" type="CharacterBody3D"]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_7p1mj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 5
+mesh = SubResource("CapsuleMesh_md0e3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_4ra3w")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
+
+[node name="DetectionArea" type="Area3D" parent="."]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea"]
+shape = SubResource("SphereShape3D_5uy6h")
+
+[node name="LineOfSightRay" type="RayCast3D" parent="."]
+target_position = Vector3(10, 0, 0)
+collision_mask = 5
+collide_with_areas = true
+debug_shape_custom_color = Color(1, 0, 0, 1)
+debug_shape_thickness = 5
