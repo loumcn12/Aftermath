@@ -10,7 +10,7 @@
 radius = 4.238
 
 [node name="Enemy" type="CharacterBody3D"]
-collision_layer = 5
+collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_7p1mj")
 
@@ -25,15 +25,13 @@ shape = SubResource("CapsuleShape3D_4ra3w")
 debug_enabled = true
 
 [node name="DetectionArea" type="Area3D" parent="."]
-collision_layer = 5
-collision_mask = 5
+collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea"]
 shape = SubResource("SphereShape3D_5uy6h")
 
 [node name="LineOfSightRay" type="RayCast3D" parent="."]
-target_position = Vector3(10, 0, 0)
-collision_mask = 5
-collide_with_areas = true
+target_position = Vector3(0, 0, -1)
+collision_mask = 4
 debug_shape_custom_color = Color(1, 0, 0, 1)
 debug_shape_thickness = 5

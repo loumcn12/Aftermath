@@ -9,16 +9,16 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m04g1"]
 height = 1.2
 
-[node name="player" type="CharacterBody3D"]
-collision_layer = 5
+[node name="Player" type="CharacterBody3D" groups=["player"]]
+collision_layer = 4
 collision_mask = 5
 script = ExtResource("3_ob08u")
 
-[node name="standing_collision_shape" type="CollisionShape3D" parent="."]
+[node name="standing_collision_shape" type="CollisionShape3D" parent="." groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_tevmw")
 
-[node name="crouching_collision_shape" type="CollisionShape3D" parent="."]
+[node name="crouching_collision_shape" type="CollisionShape3D" parent="." groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.602376, 0)
 shape = SubResource("CapsuleShape3D_m04g1")
 disabled = true
