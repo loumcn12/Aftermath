@@ -80,7 +80,7 @@ func advance_to_next_point():
 	agent.target_position = last_known_patrol_position
 
 func _on_body_entered(body: Node):
-	print("Entered:", body.name)
+	print("Entered:", body.name, " Groups:", body.get_groups())
 	if body.is_in_group("player"):
 		player = body
 		player_detected = true
@@ -104,24 +104,30 @@ func _update_line_of_sight():
 
 	var from_pos = global_transform.origin + Vector3.UP * 1.5
 	var to_pos = player.global_transform.origin + Vector3.UP * 1.5
-	var direction = to_pos - from_pos
 
-	# Update RayCast position and direction
-	los_ray.global_position = from_pos
-	los_ray.target_position = direction  # target_position is relative to global_position
-	los_ray.force_raycast_update()
+	var space_state = get_world_3d().direct_space_state
+	var query = PhysicsRayQueryParameters3D.create(from_pos, to_pos)
+	query.exclude = [self]
+	query.collide_with_areas = false
+	query.collision_mask = 1 << 1  # Assuming player is on layer 2
 
-	print("Ray from:", from_pos, " to:", to_pos, " dir:", direction.normalized())
-	
-	if los_ray.is_colliding():
-		var collider = los_ray.get_collider()
+	var result = space_state.intersect_ray(query)
+
+	if result:
+		var collider = result.collider
 		print("Ray hit:", collider.name)
-
 		if collider.is_in_group("player"):
 			player_visible = true
 			chasing = true
+			print("🔴 Raycast HIT PLAYER")
 		else:
 			player_visible = false
+			print("🟠 Raycast hit something else")
 	else:
-		print("Raycast missed everything")
 		player_visible = false
+		print("⚪ Raycast missed everything")
+
+	# Godot 4.5+ only: use this in the future
+	# if Engine.is_editor_hint:
+	#     var color = player_visible ? Color.GREEN : Color.YELLOW
+	#     get_viewport().get_debug_draw().draw_line_3d(from_pos, to_pos, color)
