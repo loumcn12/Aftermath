@@ -4,6 +4,9 @@ extends CharacterBody3D
 @export var patrol_speed: float = 3.0
 @export var chase_speed: float = 5.0
 @export var wait_time_at_point: float = 1.0
+@export var damage_amount: int = 10
+@export var damage_delay: float = 1.0
+
 
 
 var current_point_index := 0
@@ -14,11 +17,18 @@ var player: Node3D = null
 var player_visible := false
 var last_known_patrol_position: Vector3
 var player_detected := false
+var player_height = 1.0  # fallback
+	
 
 
 @onready var agent: NavigationAgent3D = $NavigationAgent3D
 @onready var detection_area: Area3D = $DetectionArea
+@onready var damage_area: Area3D = $DamageArea
 @onready var los_ray: RayCast3D = $LineOfSightRay
+@onready var damage_timer: Timer = $DamageTimer
+@onready var playerNode: Node3D = get_parent().get_node("player")
+@onready var standing_shape_node: CollisionShape3D = playerNode.get_node("standing_collision_shape")
+@onready var crouching_shape_node: CollisionShape3D = playerNode.get_node("crouching_collision_shape")
 
 
 
@@ -27,11 +37,18 @@ func _ready():
 	if patrol_points.is_empty():
 		push_warning("Patrol points are empty.")
 		return
+		
 
 	agent.target_position = patrol_points[current_point_index]
 
 	detection_area.body_entered.connect(_on_body_entered)
 	detection_area.body_exited.connect(_on_body_exited)
+	
+	damage_area.body_entered.connect(_on_damage_area_body_entered)
+	damage_area.body_exited.connect(_on_damage_area_body_exited)
+	
+	damage_timer.timeout.connect(_on_damage_timer_timeout)
+	damage_timer.wait_time = damage_delay
 
 func _physics_process(_delta: float) -> void:
 	if player_detected:
@@ -97,13 +114,45 @@ func _on_body_exited(body: Node):
 		chasing = false
 		agent.target_position = last_known_patrol_position
 
+func _on_damage_area_body_entered(body: Node):
+	if body.is_in_group("player"):
+		player = body
+		damage_timer.start()
+		
+func _on_damage_area_body_exited(body: Node):
+	if body.is_in_group("player"):
+		damage_timer.stop()
+		
+func _on_damage_timer_timeout():
+	if is_instance_valid(player):
+		if player.is_in_group("player") and damage_area.get_overlapping_bodies().has(player):
+			player._Damage(damage_amount)
+			print("Damaged player for", damage_amount)
+			
+func get_active_player_shape_height() -> float:
+	if not is_instance_valid(playerNode):
+		return 1.5  # fallback default height
+
+	if standing_shape_node and standing_shape_node is CollisionShape3D and standing_shape_node.visible:
+		var shape = standing_shape_node.shape
+		if shape is CapsuleShape3D:
+			return shape.height
+	elif crouching_shape_node and crouching_shape_node is CollisionShape3D and crouching_shape_node.visible:
+		var shape = crouching_shape_node.shape
+		if shape is CapsuleShape3D:
+			return shape.height
+
+	return 1.5  # default if nothing is valid
+
 func _update_line_of_sight():
 	if not is_instance_valid(player):
 		player_visible = false
 		return
+		
+	
 
 	var from_pos = global_transform.origin + Vector3.UP * 1.5
-	var to_pos = player.global_transform.origin + Vector3.UP * 1.5
+	var to_pos = player.global_transform.origin + Vector3.UP * (player_height / 2.0)
 
 	var space_state = get_world_3d().direct_space_state
 	var query = PhysicsRayQueryParameters3D.create(from_pos, to_pos)

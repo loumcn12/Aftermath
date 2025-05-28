@@ -136,3 +136,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.03718, 0, 14.9207)
 
 [node name="Enemy" parent="." instance=ExtResource("7_o6xl0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.36493, 0)
+patrol_speed = 5.0
+chase_speed = 3.0
