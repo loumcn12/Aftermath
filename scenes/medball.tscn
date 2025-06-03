@@ -1,15 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwupnc84odj3m"]
+[gd_scene load_steps=4 format=3 uid="uid://cwupnc84odj3m"]
 
+[ext_resource type="Script" uid="uid://mt43qvu3kbxy" path="res://scripts/medball.gd" id="1_sbbdb"]
 [ext_resource type="PackedScene" uid="uid://b34fu83c15qnd" path="res://assets/medball.glb" id="1_tovdw"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_sbbdb"]
 
-[node name="Node3D" type="Node3D"]
+[node name="medball" type="StaticBody3D" groups=["health"]]
+transform = Transform3D(0.505717, 0, 0, 0, 0.505717, 0, 0, 0, 0.505717, 0, 0, 0)
+script = ExtResource("1_sbbdb")
 
 [node name="medball" parent="." instance=ExtResource("1_tovdw")]
 
-[node name="Area3D" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" groups=["health"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(2.05, 0, 0, 0, 2.05, 0, 0, 0, 2.05, 0, 0, 0)
 shape = SubResource("SphereShape3D_sbbdb")

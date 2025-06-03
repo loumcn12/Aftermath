@@ -3,6 +3,8 @@ extends Control
 @onready var windowmode = $VBoxContainer/windowmodesetting/OptionButton
 @onready var crosshair = $VBoxContainer/crosshairsetting/crosshairbutton
 @onready var pausemenu = $"../.."
+@onready var fpsbutton = $VBoxContainer/FPSsetting/fpsbutton
+@onready var buttonSound = $AudioStreamPlayer2D
 
 # Calls when the scene is loaded
 func _ready() -> void:
@@ -14,7 +16,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	
 	# Changes the window mode between fullscreen and windowed
-	if fullscreen.button_pressed == true:
+	if fullscreen.button_pressed:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
@@ -30,9 +32,16 @@ func _process(_delta: float) -> void:
 		Globalscript.crosshair = true
 	else:
 		Globalscript.crosshair = false
+		
+	if fpsbutton.button_pressed:
+		Globalscript.showFPS = true
+	else:
+		Globalscript.showFPS = false
 
 # Returns the user to the main menu
 func _on_back_button_pressed() -> void:
+	buttonSound.play()
+	await get_tree().create_timer(0.2).timeout
 	if "OptionsMenu" in str(get_tree().current_scene):
 		get_tree().change_scene_to_file("res://scenes/main menu/main_menu.tscn")
 	else:

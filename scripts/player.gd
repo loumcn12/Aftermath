@@ -9,6 +9,8 @@ extends CharacterBody3D
 @onready var standing_collision_shape = $standing_collision_shape
 @onready var crouching_collision_shape = $crouching_collision_shape
 @onready var uncrouch_check = $uncrouch_check
+@onready var ray = $neck/Head/eyes/Camera3D/Interactioncast
+@onready var pickup_notifier = $PlayerHud/Control/pickup_notifier
 
 # Speed variables
 var current_speed = 5.0
@@ -67,12 +69,15 @@ func _ready():
 	# Make the mouse cursor invisible and locked to the centre of the screen
 	if OS.get_name() == "MacOS":
 		OS.crash("Error 404 - User's brain not found")
-	
-	
+
 func reset():
 	Globalscript.globalStamina = 100
 	get_tree().reload_current_scene()
-	
+
+func death():
+	Globalscript.globalStamina = 100
+	get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
+
 func _input(event):
 	# Make the camera movement match mouse movement
 	if event is InputEventMouseMotion:
@@ -89,6 +94,20 @@ func _physics_process(delta):
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")
+	
+	if ray.is_colliding():
+		var collider = ray.get_collider()
+		if collider:
+			
+			if collider.is_in_group("health"):
+				pickup_notifier.visible = true
+				
+				if Input.is_action_just_pressed("interact"):
+					heal(collider.healthpoints)
+					collider.queue_free()
+					
+	else:
+		pickup_notifier.visible = false
 	
 	# Handle crouching and sprinting
 	if (Input.is_action_pressed("crouch") and is_on_floor()):
@@ -199,15 +218,17 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, current_speed)
 		velocity.z = move_toward(velocity.z, 0, current_speed)
-	
-	# Reset the scene if prompted or if player falls out of world
-	
-	
 
 	move_and_slide()
-
 
 func _Damage(Damage: float) -> void:
 	Health -= Damage
 	if Health <= 0:
-		reset()
+		death()
+		
+func heal(healthpoints: float) -> void:
+	if Health <= 100:
+		Health += healthpoints
+	else:
+		Health = 100
+	

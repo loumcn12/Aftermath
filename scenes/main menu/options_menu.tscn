@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://i813vheb5uer"]
+[gd_scene load_steps=3 format=3 uid="uid://i813vheb5uer"]
 
 [ext_resource type="Script" uid="uid://ucstw6hvc0sr" path="res://scripts/options_menu.gd" id="1_hpoe8"]
+[ext_resource type="AudioStream" uid="uid://dxsf0alrbk1js" path="res://assets/audio/error.wav" id="2_b7gl8"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -49,6 +50,18 @@ layout_mode = 2
 size_flags_horizontal = 3
 button_pressed = true
 
+[node name="FPSsetting" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="fpslabel" type="Label" parent="VBoxContainer/FPSsetting"]
+layout_mode = 2
+text = "Show FPS"
+
+[node name="fpsbutton" type="CheckButton" parent="VBoxContainer/FPSsetting"]
+layout_mode = 2
+size_flags_horizontal = 3
+button_pressed = true
+
 [node name="windowmodesetting" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
@@ -67,5 +80,8 @@ popup/item_1/id = 1
 [node name="BackButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Back"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_b7gl8")
 
 [connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

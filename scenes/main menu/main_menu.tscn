@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdtp3c80v85go"]
+[gd_scene load_steps=5 format=3 uid="uid://cdtp3c80v85go"]
 
 [ext_resource type="Script" uid="uid://f8fo33ievb68" path="res://scripts/main_menu.gd" id="1_cbjxn"]
+[ext_resource type="AudioStream" uid="uid://dxsf0alrbk1js" path="res://assets/audio/error.wav" id="2_8w606"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cbjxn"]
 font_size = 40
@@ -75,6 +76,9 @@ size_flags_horizontal = 4
 text = "Version 0.0.2"
 label_settings = SubResource("LabelSettings_8w606")
 vertical_alignment = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_8w606")
 
 [connection signal="pressed" from="VBoxContainer/startbutton" to="." method="_on_startbutton_pressed"]
 [connection signal="pressed" from="VBoxContainer/optionsbutton" to="." method="_on_optionsbutton_pressed"]
