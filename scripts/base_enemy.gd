@@ -1,6 +1,14 @@
 extends CharacterBody3D
 
-@export var patrol_points: Array[Vector3] = [Vector3(0, 0, 0), Vector3(10, 0, 0), Vector3(20, 0, -15), Vector3(0, 0, -20)]
+@export var all_patrol_points: Array[Vector3] = [
+	Vector3(0, 0, 0),
+	Vector3(10, 0, 0),
+	Vector3(20, 0, -15),
+	Vector3(0, 0, -20),
+	Vector3(20, 0, 6),
+	Vector3(20, 0, -20)
+]
+@export var patrol_point_count: int = 4
 @export var patrol_speed: float = 3.0
 @export var chase_speed: float = 5.0
 @export var wait_time_at_point: float = 1.0
@@ -8,7 +16,7 @@ extends CharacterBody3D
 @export var damage_delay: float = 1.0
 
 
-
+var patrol_points: Array[Vector3] = []
 var current_point_index := 0
 var waiting := false
 var wait_timer := 0.0
@@ -17,7 +25,7 @@ var player: Node3D = null
 var player_visible := false
 var last_known_patrol_position: Vector3
 var player_detected := false
-var player_height = 1.0  # fallback
+var player_height = 1.5  # fallback
 	
 
 
@@ -34,12 +42,23 @@ var player_height = 1.0  # fallback
 
 func _ready():
 	los_ray.enabled = true
-	if patrol_points.is_empty():
-		push_warning("Patrol points are empty.")
-		return
-		
 
+	# Shuffle the full list and select a subset
+	if all_patrol_points.is_empty():
+		push_warning("All patrol points are empty.")
+		return
+
+	var points_copy = all_patrol_points.duplicate()
+	points_copy.shuffle()
+
+	if patrol_point_count >= points_copy.size():
+		patrol_points = points_copy
+	else:
+		patrol_points = points_copy.slice(0, patrol_point_count)
+
+	current_point_index = 0
 	agent.target_position = patrol_points[current_point_index]
+	last_known_patrol_position = patrol_points[current_point_index]
 
 	detection_area.body_entered.connect(_on_body_entered)
 	detection_area.body_exited.connect(_on_body_exited)
@@ -50,11 +69,9 @@ func _ready():
 	damage_timer.timeout.connect(_on_damage_timer_timeout)
 	damage_timer.wait_time = damage_delay
 
-func _physics_process(_delta: float) -> void:
+func _process(delta):
 	if player_detected:
 		_update_line_of_sight()
-
-func _process(delta):
 	# print("Chasing:", chasing, " Player valid:", is_instance_valid(player))
 	if chasing and is_instance_valid(player):
 		_update_line_of_sight()
@@ -97,15 +114,13 @@ func advance_to_next_point():
 	agent.target_position = last_known_patrol_position
 
 func _on_body_entered(body: Node):
-	# print("Entered:", body.name, " Groups:", body.get_groups())
 	if body.is_in_group("player"):
 		player = body
 		player_detected = true
+		player_height = get_active_player_shape_height()  # ← Update height here!
 		_update_line_of_sight()
-		# print("LOS Update 3")
 		if player_visible:
 			chasing = true
-		
 
 func _on_body_exited(body: Node):
 	if body == player:
@@ -131,7 +146,7 @@ func _on_damage_timer_timeout():
 			
 func get_active_player_shape_height() -> float:
 	if not is_instance_valid(playerNode):
-		return 1.5  # fallback default height
+		return player_height  # fallback default height
 
 	if standing_shape_node and standing_shape_node is CollisionShape3D and standing_shape_node.visible:
 		var shape = standing_shape_node.shape
@@ -142,15 +157,15 @@ func get_active_player_shape_height() -> float:
 		if shape is CapsuleShape3D:
 			return shape.height
 
-	return 1.5  # default if nothing is valid
+	return player_height  # default if nothing is valid
 
 func _update_line_of_sight():
 	if not is_instance_valid(player):
 		player_visible = false
 		return
 		
+	player_height = get_active_player_shape_height()
 	
-
 	var from_pos = global_transform.origin + Vector3.UP * 1.5
 	var to_pos = player.global_transform.origin + Vector3.UP * (player_height / 2.0)
 
