@@ -11,6 +11,7 @@ extends CharacterBody3D
 @onready var uncrouch_check = $uncrouch_check
 @onready var ray = $neck/Head/eyes/Camera3D/Interactioncast
 @onready var pickup_notifier = $PlayerHud/Control/pickup_notifier
+@onready var punch_notifier = $PlayerHud/Control/punch_notifier
 
 # Speed variables
 var current_speed = 5.0
@@ -39,7 +40,7 @@ var Health = 100
 var was_on_floor_last_frame = true
 var max_fall_speed = 0.0
 const FALL_DAMAGE_THRESHOLD = 12.0
-const FALL_DAMAGE_MULTIPLIER = 2.5
+const FALL_DAMAGE_MULTIPLIER = 15
 
 # Head bobbing vars
 
@@ -110,8 +111,16 @@ func _physics_process(delta):
 					heal(collider.healthpoints)
 					collider.queue_free()
 					
+			if collider.is_in_group("enemy"):
+				punch_notifier.visible = true
+				
+				if Input.is_action_just_pressed("mouse1"):
+					collider._damage(10)
+			
+					
 	else:
 		pickup_notifier.visible = false
+		punch_notifier.visible = false
 	
 	# Handle crouching and sprinting
 	if (Input.is_action_pressed("crouch") and is_on_floor()):
@@ -174,13 +183,13 @@ func _physics_process(delta):
 		if sprinting and (stamina > 1):
 			stamina = stamina - (SprintDischarge * 0.01)
 			
-	if (walking or (sprinting and input_dir == Vector2.ZERO)) and (stamina <= 100) and !Input.is_action_pressed("sprint"):
+	if (walking or (sprinting and input_dir == Vector2.ZERO)) and (stamina <= 100) and !Input.is_action_pressed("sprint") and is_on_floor():
 		stamina = stamina + (WalkRecharge * 0.01)
 	
-	elif crouching and (stamina <= 100) and !Input.is_action_pressed("sprint"):
+	elif crouching and (stamina <= 100) and !Input.is_action_pressed("sprint") and is_on_floor():
 		stamina = stamina + (CrouchRecharge * 0.01)
 	
-	if input_dir == Vector2.ZERO and stamina <= 100 and !Input.is_action_pressed("sprint"):
+	if input_dir == Vector2.ZERO and stamina <= 100 and !Input.is_action_pressed("sprint") and is_on_floor():
 		stamina = stamina + (BaseRecharge * 0.01)
 	
 	if stamina < 1:
@@ -205,8 +214,12 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor() and (stamina > 1):
+	if Input.is_action_just_pressed("jump") and is_on_floor() and (stamina > 5):
 		velocity.y = jump_velocity
+		if stamina > 5:
+			stamina = stamina - 5
+		else:
+			stamina = 1
 	
 
 	if is_on_floor():
@@ -248,7 +261,7 @@ func _Damage(Damage: float) -> void:
 		death()
 		
 func heal(healthpoints: float) -> void:
-	if Health <= 100:
+	if Health < (100 - healthpoints):
 		Health += healthpoints
 	else:
 		Health = 100

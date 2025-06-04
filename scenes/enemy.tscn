@@ -13,17 +13,17 @@ radius = 4.0
 [sub_resource type="SphereShape3D" id="SphereShape3D_7p1mj"]
 radius = 1.5
 
-[node name="Enemy" type="CharacterBody3D"]
+[node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
 collision_layer = 2
 collision_mask = 7
 floor_max_angle = 1.39626
 script = ExtResource("1_7p1mj")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." groups=["enemy"]]
 layers = 5
 mesh = SubResource("CapsuleMesh_md0e3")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["enemy"]]
 shape = SubResource("CapsuleShape3D_4ra3w")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

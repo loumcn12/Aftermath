@@ -6,14 +6,17 @@ extends CharacterBody3D
 	Vector3(20, 0, -15),
 	Vector3(0, 0, -20),
 	Vector3(20, 0, 6),
-	Vector3(20, 0, -20)
+	Vector3(20, 0, -20),
+	Vector3(-7, 0, -7),
+	Vector3(-7, 0, -20)
 ]
-@export var patrol_point_count: int = 4
-@export var patrol_speed: float = 1.0
+@export var patrol_point_count: int = 3
+@export var patrol_speed: float = 3.0
 @export var chase_speed: float = 5.0
 @export var wait_time_at_point: float = 1.0
 @export var damage_amount: int = 10
 @export var damage_delay: float = 1.0
+@export var health: float = 100
 
 
 var patrol_points: Array[Vector3] = []
@@ -72,12 +75,12 @@ func _ready():
 	damage_timer.wait_time = damage_delay
 
 func _process(delta):
-	if velocity:
+	"if velocity:
 		if FootstepPlayer.playing == false:
 			FootstepPlayer.play()
 		
 	else:
-		FootstepPlayer.playing = false
+		FootstepPlayer.playing = false"
 		
 	if player_detected:
 		_update_line_of_sight()
@@ -167,6 +170,13 @@ func get_active_player_shape_height() -> float:
 			return shape.height
 
 	return player_height  # default if nothing is valid
+
+func _damage(damage):
+	if health > 0:
+		health = health - damage
+		print(health)
+	if health <= 0:
+		queue_free()
 
 func _update_line_of_sight():
 	if not is_instance_valid(player):

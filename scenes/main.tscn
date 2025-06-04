@@ -162,8 +162,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.03718, 0, 14.9207)
 
 [node name="Enemy" parent="." instance=ExtResource("7_o6xl0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-patrol_speed = 5.0
-chase_speed = 3.0
 
 [node name="medball" parent="." instance=ExtResource("5_tipki")]
 transform = Transform3D(0.505717, 0, 0, 0, 0.505717, 0, 0, 0, 0.505717, 4.19961, 0.505717, 7.03134)
@@ -173,3 +171,9 @@ transform = Transform3D(0.505717, 0, 0, 0, 0.505717, 0, 0, 0, 0.505717, -4.74043
 
 [node name="medball3" parent="." instance=ExtResource("5_tipki")]
 transform = Transform3D(0.507937, 0, 0, 0, 0.507937, 0, 0, 0, 0.507937, 15.3517, 0.505718, -17.1168)
+
+[node name="Enemy2" parent="." instance=ExtResource("7_o6xl0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.48439, 1, -17.7549)
+
+[node name="Enemy3" parent="." instance=ExtResource("7_o6xl0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.7712, 1, -12.35)
