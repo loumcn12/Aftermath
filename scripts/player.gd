@@ -36,6 +36,10 @@ var crouching = false
 # Stats
 
 var Health = 100
+var was_on_floor_last_frame = true
+var max_fall_speed = 0.0
+const FALL_DAMAGE_THRESHOLD = 12.0
+const FALL_DAMAGE_MULTIPLIER = 2.5
 
 # Head bobbing vars
 
@@ -218,6 +222,23 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, current_speed)
 		velocity.z = move_toward(velocity.z, 0, current_speed)
+		
+	# Track the maximum fall speed
+	if !is_on_floor():
+		# Track how fast the player is falling
+		if velocity.y < max_fall_speed:
+			max_fall_speed = velocity.y
+	else:
+		if !was_on_floor_last_frame:
+			# Just landed this frame
+			var fall_speed = abs(max_fall_speed)
+			if fall_speed > FALL_DAMAGE_THRESHOLD:
+				var damage = (fall_speed - FALL_DAMAGE_THRESHOLD) * FALL_DAMAGE_MULTIPLIER
+				_Damage(damage)
+			max_fall_speed = 0.0  # Reset fall speed on landing
+
+	# Update the previous floor state
+	was_on_floor_last_frame = is_on_floor()
 
 	move_and_slide()
 

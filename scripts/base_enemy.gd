@@ -37,6 +37,7 @@ var player_height = 1.5  # fallback
 @onready var playerNode: Node3D = get_parent().get_node("player")
 @onready var standing_shape_node: CollisionShape3D = playerNode.get_node("standing_collision_shape")
 @onready var crouching_shape_node: CollisionShape3D = playerNode.get_node("crouching_collision_shape")
+@onready var FootstepPlayer: AudioStreamPlayer3D = $FootstepPlayer
 
 
 
@@ -70,6 +71,11 @@ func _ready():
 	damage_timer.wait_time = damage_delay
 
 func _process(delta):
+	if velocity:
+		FootstepPlayer.playing = true
+	else:
+		FootstepPlayer.playing = false
+		
 	if player_detected:
 		_update_line_of_sight()
 	# print("Chasing:", chasing, " Player valid:", is_instance_valid(player))

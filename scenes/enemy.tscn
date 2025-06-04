@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dt4cwmc0uynan"]
+[gd_scene load_steps=7 format=3 uid="uid://dt4cwmc0uynan"]
 
 [ext_resource type="Script" uid="uid://bnlilythjcoyg" path="res://scripts/base_enemy.gd" id="1_7p1mj"]
+[ext_resource type="AudioStream" uid="uid://dgw23buqkrw67" path="res://assets/audio/deep steps.wav" id="2_md0e3"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_md0e3"]
 
@@ -48,3 +49,6 @@ debug_shape_custom_color = Color(1, 0, 0, 1)
 debug_shape_thickness = 5
 
 [node name="DamageTimer" type="Timer" parent="."]
+
+[node name="FootstepPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_md0e3")
