@@ -9,7 +9,7 @@ extends CharacterBody3D
 	Vector3(20, 0, -20)
 ]
 @export var patrol_point_count: int = 4
-@export var patrol_speed: float = 3.0
+@export var patrol_speed: float = 1.0
 @export var chase_speed: float = 5.0
 @export var wait_time_at_point: float = 1.0
 @export var damage_amount: int = 10
@@ -42,6 +42,7 @@ var player_height = 1.5  # fallback
 
 
 func _ready():
+	
 	los_ray.enabled = true
 
 	# Shuffle the full list and select a subset
@@ -72,7 +73,9 @@ func _ready():
 
 func _process(delta):
 	if velocity:
-		FootstepPlayer.playing = true
+		if FootstepPlayer.playing == false:
+			FootstepPlayer.play()
+		
 	else:
 		FootstepPlayer.playing = false
 		

@@ -52,3 +52,4 @@ debug_shape_thickness = 5
 
 [node name="FootstepPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_md0e3")
+pitch_scale = 4.2
