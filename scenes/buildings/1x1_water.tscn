@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxgkwg7cggnvt"]
+
+[ext_resource type="PackedScene" uid="uid://ctavocx81sjbl" path="res://assets/buildings/1x1_Water.col.glb" id="1_naexc"]
+
+[node name="1x1_Water" type="Node3D"]
+
+[node name="1x1_Water" parent="." instance=ExtResource("1_naexc")]

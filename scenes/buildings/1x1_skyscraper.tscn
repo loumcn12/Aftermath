@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd16t4v5ty8wt"]
+
+[ext_resource type="PackedScene" uid="uid://bue0nvykcaq4j" path="res://assets/buildings/1x1_Skyscraper.col.glb" id="1_jbaos"]
+
+[node name="1x1_Skyscraper" type="Node3D"]
+
+[node name="1x1_Skyscraper" parent="." instance=ExtResource("1_jbaos")]

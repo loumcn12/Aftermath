@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://j4rusxv7mfe3"]
+
+[ext_resource type="PackedScene" uid="uid://m4mwg537sm6x" path="res://assets/buildings/2x2_ParkingGarage.col.glb" id="1_dcha6"]
+
+[node name="2x2_ParkingGarage" type="Node3D"]
+
+[node name="2x2_ParkingGarage" parent="." instance=ExtResource("1_dcha6")]

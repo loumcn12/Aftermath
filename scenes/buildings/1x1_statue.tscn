@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://4i5jxpx78ls2"]
+
+[ext_resource type="PackedScene" uid="uid://d3ffgatkeeptd" path="res://assets/buildings/1x1_Statue.col.glb" id="1_a2mi3"]
+
+[node name="1x1_Statue" type="Node3D"]
+
+[node name="1x1_Statue" parent="." instance=ExtResource("1_a2mi3")]

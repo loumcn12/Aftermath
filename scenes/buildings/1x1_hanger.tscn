@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://nyey61jrvo7k"]
+
+[ext_resource type="PackedScene" uid="uid://6phrgv1kl6vm" path="res://assets/buildings/1x1_Hanger.col.glb" id="1_dwmws"]
+
+[node name="1x1_Hanger" type="Node3D"]
+
+[node name="1x1_Hanger" parent="." instance=ExtResource("1_dwmws")]

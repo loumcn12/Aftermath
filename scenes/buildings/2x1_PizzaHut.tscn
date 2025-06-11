@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmd8spny5hrql"]
+
+[ext_resource type="PackedScene" uid="uid://ylqwimeqjt2r" path="res://assets/buildings/2x1_PizzaHut.col.glb" id="1_yoewp"]
+
+[node name="2x1_PizzaHut" type="Node3D"]
+
+[node name="2x1_PizzaHut" parent="." instance=ExtResource("1_yoewp")]

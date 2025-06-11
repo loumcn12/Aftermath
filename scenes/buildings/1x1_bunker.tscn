@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnb0vfc56u5pd"]
+
+[ext_resource type="PackedScene" uid="uid://bsnqylebv165" path="res://assets/buildings/1x1_Bunker.col.glb" id="1_3ublb"]
+
+[node name="1x1_Bunker" type="Node3D"]
+
+[node name="1x1_Bunker" parent="." instance=ExtResource("1_3ublb")]

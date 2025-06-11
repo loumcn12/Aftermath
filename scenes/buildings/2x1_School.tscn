@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bribm424n6ptu"]
+
+[ext_resource type="PackedScene" uid="uid://b3ba0e0qeswv7" path="res://assets/buildings/2x1_School.col.glb" id="1_0d611"]
+
+[node name="2x1_School" type="Node3D"]
+
+[node name="2x1_School" parent="." instance=ExtResource("1_0d611")]

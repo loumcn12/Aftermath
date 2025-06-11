@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://lpvc1j7fri4f"]
+
+[ext_resource type="PackedScene" uid="uid://7h87bojnl2mj" path="res://assets/buildings/2x1_Buildings.col.glb" id="1_kmdnq"]
+
+[node name="2x1_Buildings" type="Node3D"]
+
+[node name="2x1_Buildings" parent="." instance=ExtResource("1_kmdnq")]

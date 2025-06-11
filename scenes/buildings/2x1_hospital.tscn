@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://l2yrmb66arke"]
+
+[ext_resource type="PackedScene" uid="uid://c6xcb1luevct5" path="res://assets/buildings/2x1_Hospital.col.glb" id="1_ex3gv"]
+
+[node name="2x1_Hospital" type="Node3D"]
+
+[node name="2x1_Hospital" parent="." instance=ExtResource("1_ex3gv")]

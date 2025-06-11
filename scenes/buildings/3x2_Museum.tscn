@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxbe05wv2xwam"]
+
+[ext_resource type="PackedScene" uid="uid://cjbkgrawki50q" path="res://assets/buildings/3x2_Museum.col.glb" id="1_wy236"]
+
+[node name="3x2_Museum" type="Node3D"]
+
+[node name="3x2_Museum" parent="." instance=ExtResource("1_wy236")]

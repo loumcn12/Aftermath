@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://fwi45wvex2il"]
+
+[ext_resource type="PackedScene" uid="uid://s7gmcceeervd" path="res://assets/buildings/3x2_Runway.col.glb" id="1_weda2"]
+
+[node name="3x2_Runway" type="Node3D"]
+
+[node name="3x2_Runway" parent="." instance=ExtResource("1_weda2")]

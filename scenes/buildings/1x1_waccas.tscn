@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://oti4q5cqsxjk"]
+
+[ext_resource type="PackedScene" uid="uid://i1mwg753agsi" path="res://assets/buildings/1x1_Waccas.col.glb" id="1_ba5qe"]
+
+[node name="1x1_Waccas" type="Node3D"]
+
+[node name="1x1_Waccas" parent="." instance=ExtResource("1_ba5qe")]
