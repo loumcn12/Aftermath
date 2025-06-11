@@ -138,6 +138,18 @@ use_collision = true
 size = Vector3(8.57885, 1.15326, 7.58606)
 material = SubResource("StandardMaterial3D_4ypqe")
 
+[node name="CSGBox3D18" type="CSGBox3D" parent="stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.9875, 12.8023, -90.4311)
+use_collision = true
+size = Vector3(8.57885, 1.15326, 162.691)
+material = SubResource("StandardMaterial3D_4ypqe")
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="stage"]
+transform = Transform3D(-0.059951, 0, -0.998201, 0, 1, 0, 0.998201, 0, -0.059951, -193.975, 12.8023, -181.062)
+use_collision = true
+size = Vector3(8.57885, 1.15326, 1463.27)
+material = SubResource("StandardMaterial3D_4ypqe")
+
 [node name="CSGBox3D17" type="CSGBox3D" parent="stage"]
 transform = Transform3D(0.929403, 0.369053, -0.00308796, 0.369048, -0.929408, -0.00220021, -0.003682, 0.000905366, -0.999993, 15.104, 11.4065, -5.00729)
 use_collision = true
@@ -177,3 +189,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.48439, 1, -17.7549)
 
 [node name="Enemy3" parent="." instance=ExtResource("7_o6xl0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.7712, 1, -12.35)
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05254, 0, -40.2024)
