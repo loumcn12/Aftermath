@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://i813vheb5uer"]
+[gd_scene load_steps=4 format=3 uid="uid://i813vheb5uer"]
 
 [ext_resource type="Script" uid="uid://ucstw6hvc0sr" path="res://scripts/options_menu.gd" id="1_hpoe8"]
 [ext_resource type="AudioStream" uid="uid://dxsf0alrbk1js" path="res://assets/audio/error.wav" id="2_b7gl8"]
+[ext_resource type="Texture2D" uid="uid://ds07eke6ryjpl" path="res://assets/AftermathMenuBlank.png" id="2_hfu7f"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -11,6 +12,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hpoe8")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_hfu7f")
+expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
