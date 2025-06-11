@@ -48,4 +48,5 @@ func _on_quit_game_button_pressed() -> void:
 func _on_returnto_menu_pressed() -> void:
 	buttonSound.play()
 	await get_tree().create_timer(0.2).timeout
+	main.pauseMenu()
 	get_tree().change_scene_to_file("res://scenes/main menu/main_menu.tscn")
