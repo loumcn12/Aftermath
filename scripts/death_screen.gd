@@ -1,8 +1,8 @@
 extends Control
 
-@onready var restartbutton = %MarginContainer/VBoxContainer/Restart
-@onready var menubutton = %MarginContainer/VBoxContainer/Menu
-@onready var quitbutton = %MarginContainer/VBoxContainer/Quit
+@onready var restartbutton = %Restart
+@onready var menubutton = %Menu
+@onready var quitbutton = %Quit
 @onready var buttonSound = $AudioStreamPlayer2D
 
 func _ready():

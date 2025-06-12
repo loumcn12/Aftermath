@@ -56,7 +56,6 @@ func load_building_models():
 		"res://scenes/buildings/3x2_Museum.tscn",
 		"res://scenes/buildings/3x2_Runway.tscn",
 		"res://scenes/buildings/3x3_Nuclear.tscn",
-		# Add all your building files here manually
 	]
 
 	for path in building_files:

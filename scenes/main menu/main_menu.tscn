@@ -71,7 +71,7 @@ offset_top = -23.0
 offset_right = 99.0
 grow_vertical = 0
 size_flags_horizontal = 4
-text = "Version 0.0.5"
+text = "Version 0.0.6"
 label_settings = SubResource("LabelSettings_8w606")
 vertical_alignment = 2
 

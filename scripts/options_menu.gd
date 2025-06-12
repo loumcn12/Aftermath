@@ -2,7 +2,7 @@ extends Control
 @onready var fullscreen = $VBoxContainer/fullscreensetting/fullscreenbutton
 @onready var windowmode = $VBoxContainer/windowmodesetting/OptionButton
 @onready var crosshair = $VBoxContainer/crosshairsetting/crosshairbutton
-@onready var pausemenu = $"../.."
+var pausemenu
 @onready var fpsbutton = $VBoxContainer/FPSsetting/fpsbutton
 @onready var buttonSound = $AudioStreamPlayer2D
 
@@ -11,6 +11,10 @@ func _ready() -> void:
 	# Disables the fullscreen button for web browsers (Handled separately)
 	if OS.get_name() == "Web":
 		fullscreen.disabled = true
+	if "OptionsMenu" in str(get_tree().current_scene):
+		pass
+	else:
+		pausemenu = $"../.."
 		
 # Calls every frame
 func _process(_delta: float) -> void:
