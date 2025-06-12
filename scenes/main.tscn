@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://djunwlie6gikb"]
+[gd_scene load_steps=16 format=3 uid="uid://djunwlie6gikb"]
 
 [ext_resource type="Texture2D" uid="uid://cwl4jn6tuy0pb" path="res://assets/textures/dev/grids/Dark/texture_07.png" id="1_qyfli"]
 [ext_resource type="Script" uid="uid://dqoh3msg73gs4" path="res://scripts/main.gd" id="1_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://mfmt5fpbaura" path="res://assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="2_76w8b"]
 [ext_resource type="Texture2D" uid="uid://b8pis02aim3b8" path="res://assets/textures/dev/grids/Orange/texture_05.png" id="3_tefeu"]
+[ext_resource type="Script" uid="uid://dk2o10mljftys" path="res://scripts/env.gd" id="4_85g3d"]
 [ext_resource type="PackedScene" uid="uid://b5u6tg7siuhu3" path="res://scenes/player.tscn" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cope3wve2dub1" path="res://scenes/pause_menu.tscn" id="5_tefeu"]
 [ext_resource type="PackedScene" uid="uid://cwupnc84odj3m" path="res://scenes/medball.tscn" id="5_tipki"]
@@ -22,11 +23,11 @@ uv1_triplanar = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o6xl0"]
 albedo_texture = ExtResource("3_tefeu")
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8lgsn"]
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_85g3d"]
 panorama = ExtResource("2_76w8b")
 
 [sub_resource type="Sky" id="Sky_xdhe3"]
-sky_material = SubResource("PanoramaSkyMaterial_8lgsn")
+sky_material = SubResource("PanoramaSkyMaterial_85g3d")
 
 [sub_resource type="Environment" id="Environment_7jrki"]
 background_mode = 2
@@ -145,12 +146,13 @@ size = Vector3(8.16357, 1, 7.58514)
 material = SubResource("StandardMaterial3D_4ypqe")
 
 [node name="env" type="Node3D" parent="."]
+script = ExtResource("4_85g3d")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
 environment = SubResource("Environment_7jrki")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="env"]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shadow_enabled = true
 
 [node name="PauseMenu" parent="." instance=ExtResource("5_tefeu")]
