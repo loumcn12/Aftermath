@@ -1,11 +1,13 @@
 extends Control
 @onready var quitbutton = $VBoxContainer/quitbutton
 @onready var buttonSound = $AudioStreamPlayer2D
+@onready var versionLabel = $VersionLabel
 
 func _ready():
 	Input.set_mouse_mode(Globalscript.mousemode)
 	if OS.get_name() == "Web":
 		quitbutton.visible = false
+	versionLabel.text = "Version " + str(ProjectSettings.get_setting("application/config/version"))
 		
 func _on_startbutton_pressed() -> void:
 	buttonSound.play()

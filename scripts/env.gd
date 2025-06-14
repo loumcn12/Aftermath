@@ -5,6 +5,7 @@ extends Node3D
 @export var night_pause: float = 1.0
 @export var pause_threshold: float = 0.001
 
+
 @onready var sun: DirectionalLight3D = $DirectionalLight3D
 @onready var world_env_node: WorldEnvironment = $WorldEnvironment
 var env: Environment
@@ -30,9 +31,8 @@ func _process(delta: float) -> void:
 		if pause_timer >= current_pause_duration:
 			is_paused = false
 			pause_timer = 0.0
-			can_pause = false  # Prevent immediate re-pausing
+			can_pause = false
 	else:
-		# Check if we are outside all pause zones to re-enable pausing
 		if abs(cycle_progress - 0.25) > pause_threshold and abs(cycle_progress - 0.75) > pause_threshold:
 			can_pause = true
 
@@ -58,12 +58,14 @@ func start_pause(duration: float) -> void:
 	current_pause_duration = duration
 
 func update_day_night(progress: float) -> void:
-	var shifted_progress = fmod(progress - 0.25 + 1.0, 1.0) # shift so midday = 0
-	var sun_angle = -90.0 * cos(shifted_progress * PI * 2.0)  # invert angle so sun points up at midday
+	var shifted_progress = fmod(progress - 0.25 + 1.0, 1.0)
+	var sun_angle = -90.0 * cos(shifted_progress * PI * 2.0)
 	sun.rotation_degrees = Vector3(sun_angle, 0.0, 0.0)
 
 	var light_factor = clamp(sin(progress * PI * 2.0), 0.0, 1.0)
-	sun.light_energy = lerp(0.1, 2.0, light_factor)
-	env.ambient_light_energy = lerp(0.1, 1.0, light_factor)
-	env.tonemap_exposure = lerp(0.01, 1.0, light_factor)
-	env.tonemap_white = lerp(50.0, 1.0, light_factor)
+
+	# Light & Exposure
+	sun.light_energy = lerp(0.3, 2.0, light_factor)
+	env.ambient_light_energy = lerp(0.3, 1.0, light_factor)
+	env.tonemap_exposure = lerp(0.3, 1.0, light_factor)
+	env.tonemap_white = lerp(16.0, 2.0, light_factor)

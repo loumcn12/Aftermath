@@ -11,9 +11,12 @@ config_version=5
 [application]
 
 config/name="Aftermath"
+config/version="0.0.6"
 run/main_scene="uid://cdtp3c80v85go"
 config/features=PackedStringArray("4.4", "Forward Plus")
+boot_splash/image="uid://c8dnqgiubokrw"
 config/icon="uid://tkgydxi7db6h"
+boot_splash/minimum_display_time=2000
 
 [autoload]
 

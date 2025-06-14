@@ -34,6 +34,12 @@ background_mode = 2
 sky = SubResource("Sky_xdhe3")
 tonemap_mode = 2
 glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.1
+volumetric_fog_albedo = Color(0.9, 0.9, 0.9, 1)
+volumetric_fog_emission_energy = 0.0
+volumetric_fog_ambient_inject = 0.5
+volumetric_fog_sky_affect = 0.6
 
 [node name="world" type="Node3D"]
 script = ExtResource("1_tbgi4")
@@ -145,6 +151,12 @@ use_collision = true
 size = Vector3(8.16357, 1, 7.58514)
 material = SubResource("StandardMaterial3D_4ypqe")
 
+[node name="SpotLight3D" type="SpotLight3D" parent="stage"]
+transform = Transform3D(1, 0, 0, 0, 0.013648, 0.999907, 0, -0.999907, 0.013648, 0, 8.66294, 0)
+light_energy = 12.675
+light_volumetric_fog_energy = 27.76
+spot_range = 13.909
+
 [node name="env" type="Node3D" parent="."]
 script = ExtResource("4_85g3d")
 
@@ -152,7 +164,6 @@ script = ExtResource("4_85g3d")
 environment = SubResource("Environment_7jrki")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="env"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shadow_enabled = true
 
 [node name="PauseMenu" parent="." instance=ExtResource("5_tefeu")]
