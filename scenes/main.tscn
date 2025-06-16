@@ -26,12 +26,12 @@ albedo_texture = ExtResource("3_tefeu")
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_85g3d"]
 panorama = ExtResource("2_76w8b")
 
-[sub_resource type="Sky" id="Sky_xdhe3"]
+[sub_resource type="Sky" id="Sky_85g3d"]
 sky_material = SubResource("PanoramaSkyMaterial_85g3d")
 
 [sub_resource type="Environment" id="Environment_7jrki"]
 background_mode = 2
-sky = SubResource("Sky_xdhe3")
+sky = SubResource("Sky_85g3d")
 tonemap_mode = 2
 glow_enabled = true
 volumetric_fog_enabled = true
@@ -150,12 +150,6 @@ transform = Transform3D(0.929403, 0.369053, -0.00308796, 0.369048, -0.929408, -0
 use_collision = true
 size = Vector3(8.16357, 1, 7.58514)
 material = SubResource("StandardMaterial3D_4ypqe")
-
-[node name="SpotLight3D" type="SpotLight3D" parent="stage"]
-transform = Transform3D(1, 0, 0, 0, 0.013648, 0.999907, 0, -0.999907, 0.013648, 0, 8.66294, 0)
-light_energy = 12.675
-light_volumetric_fog_energy = 27.76
-spot_range = 13.909
 
 [node name="env" type="Node3D" parent="."]
 script = ExtResource("4_85g3d")

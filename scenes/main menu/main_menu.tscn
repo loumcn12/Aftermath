@@ -1,10 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdtp3c80v85go"]
+[gd_scene load_steps=7 format=3 uid="uid://cdtp3c80v85go"]
 
 [ext_resource type="Script" uid="uid://f8fo33ievb68" path="res://scripts/main_menu.gd" id="1_cbjxn"]
 [ext_resource type="AudioStream" uid="uid://dxsf0alrbk1js" path="res://assets/audio/error.wav" id="2_8w606"]
 [ext_resource type="Texture2D" uid="uid://bumkkkp42sg7u" path="res://assets/AftermathMenu.png" id="2_vifqf"]
 
+[sub_resource type="FontFile" id="FontFile_vifqf"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
 [sub_resource type="LabelSettings" id="LabelSettings_8w606"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_okfgx"]
+font_size = 110
+font_color = Color(0.960784, 0.733333, 0.411765, 1)
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -71,9 +82,19 @@ offset_top = -23.0
 offset_right = 99.0
 grow_vertical = 0
 size_flags_horizontal = 4
+theme_override_fonts/font = SubResource("FontFile_vifqf")
 text = "Version 0.0.0"
 label_settings = SubResource("LabelSettings_8w606")
 vertical_alignment = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 135.0
+offset_right = 1005.0
+offset_bottom = 279.0
+text = "AFTERMATH"
+label_settings = SubResource("LabelSettings_okfgx")
 
 [connection signal="pressed" from="VBoxContainer/startbutton" to="." method="_on_startbutton_pressed"]
 [connection signal="pressed" from="VBoxContainer/optionsbutton" to="." method="_on_optionsbutton_pressed"]

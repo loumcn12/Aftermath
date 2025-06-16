@@ -22,6 +22,14 @@ boot_splash/minimum_display_time=2000
 
 Globalscript="*res://scripts/globalscript.gd"
 
+[filesystem]
+
+import/blender/enabled=false
+
+[gui]
+
+theme/custom_font="uid://d0y8huks0wlyl"
+
 [input]
 
 backward={
