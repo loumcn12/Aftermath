@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ceom27ev85g53"]
+[gd_scene load_steps=9 format=3 uid="uid://ceom27ev85g53"]
 
 [ext_resource type="PackedScene" uid="uid://1wfvq3d5y75o" path="res://assets/Misc/MainMenu.glb" id="1_73257"]
 [ext_resource type="Texture2D" uid="uid://mfmt5fpbaura" path="res://assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="2_hg656"]
+[ext_resource type="PackedScene" uid="uid://ckgmx5fed770t" path="res://scenes/streetlamp.tscn" id="3_lsx8b"]
+[ext_resource type="PackedScene" uid="uid://d1hi0wlisv32i" path="res://assets/Misc/MainMenuDoor.glb" id="4_ymex3"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_lsx8b"]
 panorama = ExtResource("2_hg656")
@@ -11,24 +13,47 @@ sky_material = SubResource("PanoramaSkyMaterial_lsx8b")
 
 [sub_resource type="Environment" id="Environment_ymex3"]
 background_mode = 2
-background_energy_multiplier = 0.2
 sky = SubResource("Sky_xdhe3")
 sky_custom_fov = 119.4
 tonemap_mode = 2
 glow_enabled = true
-volumetric_fog_density = 0.1
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.06
 volumetric_fog_albedo = Color(0.9, 0.9, 0.9, 1)
 volumetric_fog_emission_energy = 0.0
 volumetric_fog_ambient_inject = 0.5
 volumetric_fog_sky_affect = 0.6
+
+[sub_resource type="FogMaterial" id="FogMaterial_lsx8b"]
+density = 1.05
 
 [node name="MainMenu" type="Node3D"]
 
 [node name="MainMenu" parent="." instance=ExtResource("1_73257")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 3.14454, -131.087)
-fov = 14.0
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 4.75916, -131.087)
+fov = 20.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ymex3")
+
+[node name="Streetlamp2" parent="." instance=ExtResource("3_lsx8b")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -31.6245)
+
+[node name="Streetlamp3" parent="." instance=ExtResource("3_lsx8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.017)
+
+[node name="Streetlamp4" parent="." instance=ExtResource("3_lsx8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 100.678)
+
+[node name="Streetlamp5" parent="." instance=ExtResource("3_lsx8b")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 54.3696)
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 41.2041)
+size = Vector3(25.5293, 2, 343.441)
+material = SubResource("FogMaterial_lsx8b")
+
+[node name="MainMenuDoor" parent="." instance=ExtResource("4_ymex3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.00996, 0)
