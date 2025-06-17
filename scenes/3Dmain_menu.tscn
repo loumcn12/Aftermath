@@ -65,3 +65,9 @@ material = SubResource("FogMaterial_lsx8b")
 
 [node name="OptionsMenu" parent="." instance=ExtResource("7_y05s1")]
 visible = false
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.72981, -131.887)
+visible = false
+light_energy = 16.0
+omni_range = 4096.0

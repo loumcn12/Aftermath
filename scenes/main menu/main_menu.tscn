@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cdtp3c80v85go"]
+[gd_scene load_steps=9 format=3 uid="uid://cdtp3c80v85go"]
 
 [ext_resource type="Script" uid="uid://f8fo33ievb68" path="res://scripts/main_menu.gd" id="1_cbjxn"]
 [ext_resource type="AudioStream" uid="uid://dxsf0alrbk1js" path="res://assets/audio/error.wav" id="2_8w606"]
+[ext_resource type="FontFile" uid="uid://c71hixmpr8htu" path="res://assets/Misc/VCR_OSD_MONO_1.001.ttf" id="3_vifqf"]
 
 [sub_resource type="SystemFont" id="SystemFont_okfgx"]
 oversampling = 10.0
@@ -14,11 +15,12 @@ cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_8w606"]
+font = ExtResource("3_vifqf")
 
-[sub_resource type="SystemFont" id="SystemFont_8w606"]
+[sub_resource type="SystemFont" id="SystemFont_pri0a"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_okfgx"]
-font = SubResource("SystemFont_8w606")
+font = SubResource("SystemFont_pri0a")
 font_size = 100
 font_color = Color(0.960784, 0.733333, 0.411765, 1)
 

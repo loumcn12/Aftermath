@@ -1,229 +1,18 @@
-[gd_scene load_steps=15 format=3 uid="uid://cope3wve2dub1"]
+[gd_scene load_steps=10 format=3 uid="uid://cope3wve2dub1"]
 
 [ext_resource type="Script" uid="uid://bcfnxv3o7qb3y" path="res://scripts/pause_menu.gd" id="1_n87rw"]
+[ext_resource type="FontFile" uid="uid://c71hixmpr8htu" path="res://assets/Misc/VCR_OSD_MONO_1.001.ttf" id="2_5d2l8"]
 [ext_resource type="PackedScene" uid="uid://i813vheb5uer" path="res://scenes/main menu/options_menu.tscn" id="2_myx47"]
 [ext_resource type="AudioStream" uid="uid://dxsf0alrbk1js" path="res://assets/audio/error.wav" id="3_kukqi"]
 
-[sub_resource type="FontFile" id="FontFile_kukqi"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/41/0/ascent = 0.0
-cache/0/41/0/descent = 0.0
-cache/0/41/0/underline_position = 0.0
-cache/0/41/0/underline_thickness = 0.0
-cache/0/41/0/scale = 1.0
-cache/0/51/0/ascent = 0.0
-cache/0/51/0/descent = 0.0
-cache/0/51/0/underline_position = 0.0
-cache/0/51/0/underline_thickness = 0.0
-cache/0/51/0/scale = 1.0
-cache/0/61/0/ascent = 0.0
-cache/0/61/0/descent = 0.0
-cache/0/61/0/underline_position = 0.0
-cache/0/61/0/underline_thickness = 0.0
-cache/0/61/0/scale = 1.0
-cache/0/66/0/ascent = 0.0
-cache/0/66/0/descent = 0.0
-cache/0/66/0/underline_position = 0.0
-cache/0/66/0/underline_thickness = 0.0
-cache/0/66/0/scale = 1.0
-cache/0/81/0/ascent = 0.0
-cache/0/81/0/descent = 0.0
-cache/0/81/0/underline_position = 0.0
-cache/0/81/0/underline_thickness = 0.0
-cache/0/81/0/scale = 1.0
-cache/0/91/0/ascent = 0.0
-cache/0/91/0/descent = 0.0
-cache/0/91/0/underline_position = 0.0
-cache/0/91/0/underline_thickness = 0.0
-cache/0/91/0/scale = 1.0
-cache/0/116/0/ascent = 0.0
-cache/0/116/0/descent = 0.0
-cache/0/116/0/underline_position = 0.0
-cache/0/116/0/underline_thickness = 0.0
-cache/0/116/0/scale = 1.0
-cache/0/121/0/ascent = 0.0
-cache/0/121/0/descent = 0.0
-cache/0/121/0/underline_position = 0.0
-cache/0/121/0/underline_thickness = 0.0
-cache/0/121/0/scale = 1.0
-cache/0/126/0/ascent = 0.0
-cache/0/126/0/descent = 0.0
-cache/0/126/0/underline_position = 0.0
-cache/0/126/0/underline_thickness = 0.0
-cache/0/126/0/scale = 1.0
-cache/0/131/0/ascent = 0.0
-cache/0/131/0/descent = 0.0
-cache/0/131/0/underline_position = 0.0
-cache/0/131/0/underline_thickness = 0.0
-cache/0/131/0/scale = 1.0
-cache/0/141/0/ascent = 0.0
-cache/0/141/0/descent = 0.0
-cache/0/141/0/underline_position = 0.0
-cache/0/141/0/underline_thickness = 0.0
-cache/0/141/0/scale = 1.0
-cache/0/146/0/ascent = 0.0
-cache/0/146/0/descent = 0.0
-cache/0/146/0/underline_position = 0.0
-cache/0/146/0/underline_thickness = 0.0
-cache/0/146/0/scale = 1.0
-cache/0/151/0/ascent = 0.0
-cache/0/151/0/descent = 0.0
-cache/0/151/0/underline_position = 0.0
-cache/0/151/0/underline_thickness = 0.0
-cache/0/151/0/scale = 1.0
-cache/0/136/0/ascent = 0.0
-cache/0/136/0/descent = 0.0
-cache/0/136/0/underline_position = 0.0
-cache/0/136/0/underline_thickness = 0.0
-cache/0/136/0/scale = 1.0
-cache/0/111/0/ascent = 0.0
-cache/0/111/0/descent = 0.0
-cache/0/111/0/underline_position = 0.0
-cache/0/111/0/underline_thickness = 0.0
-cache/0/111/0/scale = 1.0
-cache/0/106/0/ascent = 0.0
-cache/0/106/0/descent = 0.0
-cache/0/106/0/underline_position = 0.0
-cache/0/106/0/underline_thickness = 0.0
-cache/0/106/0/scale = 1.0
-cache/0/101/0/ascent = 0.0
-cache/0/101/0/descent = 0.0
-cache/0/101/0/underline_position = 0.0
-cache/0/101/0/underline_thickness = 0.0
-cache/0/101/0/scale = 1.0
-cache/0/86/0/ascent = 0.0
-cache/0/86/0/descent = 0.0
-cache/0/86/0/underline_position = 0.0
-cache/0/86/0/underline_thickness = 0.0
-cache/0/86/0/scale = 1.0
-cache/0/76/0/ascent = 0.0
-cache/0/76/0/descent = 0.0
-cache/0/76/0/underline_position = 0.0
-cache/0/76/0/underline_thickness = 0.0
-cache/0/76/0/scale = 1.0
-cache/0/71/0/ascent = 0.0
-cache/0/71/0/descent = 0.0
-cache/0/71/0/underline_position = 0.0
-cache/0/71/0/underline_thickness = 0.0
-cache/0/71/0/scale = 1.0
-cache/0/56/0/ascent = 0.0
-cache/0/56/0/descent = 0.0
-cache/0/56/0/underline_position = 0.0
-cache/0/56/0/underline_thickness = 0.0
-cache/0/56/0/scale = 1.0
-cache/0/46/0/ascent = 0.0
-cache/0/46/0/descent = 0.0
-cache/0/46/0/underline_position = 0.0
-cache/0/46/0/underline_thickness = 0.0
-cache/0/46/0/scale = 1.0
-cache/0/36/0/ascent = 0.0
-cache/0/36/0/descent = 0.0
-cache/0/36/0/underline_position = 0.0
-cache/0/36/0/underline_thickness = 0.0
-cache/0/36/0/scale = 1.0
-cache/0/31/0/ascent = 0.0
-cache/0/31/0/descent = 0.0
-cache/0/31/0/underline_position = 0.0
-cache/0/31/0/underline_thickness = 0.0
-cache/0/31/0/scale = 1.0
-cache/0/21/0/ascent = 0.0
-cache/0/21/0/descent = 0.0
-cache/0/21/0/underline_position = 0.0
-cache/0/21/0/underline_thickness = 0.0
-cache/0/21/0/scale = 1.0
-cache/0/26/0/ascent = 0.0
-cache/0/26/0/descent = 0.0
-cache/0/26/0/underline_position = 0.0
-cache/0/26/0/underline_thickness = 0.0
-cache/0/26/0/scale = 1.0
-cache/0/30/0/ascent = 0.0
-cache/0/30/0/descent = 0.0
-cache/0/30/0/underline_position = 0.0
-cache/0/30/0/underline_thickness = 0.0
-cache/0/30/0/scale = 1.0
-
 [sub_resource type="LabelSettings" id="LabelSettings_5d2l8"]
-font = SubResource("FontFile_kukqi")
+font = ExtResource("2_5d2l8")
 font_size = 30
 
-[sub_resource type="FontFile" id="FontFile_7l7mv"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/30/0/ascent = 0.0
-cache/0/30/0/descent = 0.0
-cache/0/30/0/underline_position = 0.0
-cache/0/30/0/underline_thickness = 0.0
-cache/0/30/0/scale = 1.0
-cache/0/20/0/ascent = 0.0
-cache/0/20/0/descent = 0.0
-cache/0/20/0/underline_position = 0.0
-cache/0/20/0/underline_thickness = 0.0
-cache/0/20/0/scale = 1.0
-
-[sub_resource type="FontFile" id="FontFile_v4r4p"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/30/0/ascent = 0.0
-cache/0/30/0/descent = 0.0
-cache/0/30/0/underline_position = 0.0
-cache/0/30/0/underline_thickness = 0.0
-cache/0/30/0/scale = 1.0
-cache/0/20/0/ascent = 0.0
-cache/0/20/0/descent = 0.0
-cache/0/20/0/underline_position = 0.0
-cache/0/20/0/underline_thickness = 0.0
-cache/0/20/0/scale = 1.0
-
-[sub_resource type="FontFile" id="FontFile_1s2dm"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/20/0/ascent = 0.0
-cache/0/20/0/descent = 0.0
-cache/0/20/0/underline_position = 0.0
-cache/0/20/0/underline_thickness = 0.0
-cache/0/20/0/scale = 1.0
-
-[sub_resource type="FontFile" id="FontFile_88e76"]
-cache/0/20/0/ascent = 0.0
-cache/0/20/0/descent = 0.0
-cache/0/20/0/underline_position = 0.0
-cache/0/20/0/underline_thickness = 0.0
-cache/0/20/0/scale = 1.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-
-[sub_resource type="FontFile" id="FontFile_knqa7"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/20/0/ascent = 0.0
-cache/0/20/0/descent = 0.0
-cache/0/20/0/underline_position = 0.0
-cache/0/20/0/underline_thickness = 0.0
-cache/0/20/0/scale = 1.0
-
-[sub_resource type="SystemFont" id="SystemFont_vifqf"]
+[sub_resource type="SystemFont" id="SystemFont_5d2l8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_71k7c"]
-font = SubResource("SystemFont_vifqf")
+font = SubResource("SystemFont_5d2l8")
 font_size = 100
 font_color = Color(0.960784, 0.733333, 0.411765, 1)
 
@@ -235,6 +24,7 @@ cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_ofnjo"]
+font = ExtResource("2_5d2l8")
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -270,31 +60,31 @@ horizontal_alignment = 1
 
 [node name="ResumeButton" type="Button" parent="PauseContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("FontFile_7l7mv")
+theme_override_fonts/font = ExtResource("2_5d2l8")
 theme_override_font_sizes/font_size = 20
 text = "Resume Game"
 
 [node name="RestartButton" type="Button" parent="PauseContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("FontFile_v4r4p")
+theme_override_fonts/font = ExtResource("2_5d2l8")
 theme_override_font_sizes/font_size = 20
 text = "Restart Level"
 
 [node name="MenuButton" type="Button" parent="PauseContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("FontFile_1s2dm")
+theme_override_fonts/font = ExtResource("2_5d2l8")
 theme_override_font_sizes/font_size = 20
 text = "Options Menu"
 
 [node name="ReturntoMenu" type="Button" parent="PauseContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("FontFile_88e76")
+theme_override_fonts/font = ExtResource("2_5d2l8")
 theme_override_font_sizes/font_size = 20
 text = "Return to Main Menu"
 
 [node name="QuitGameButton" type="Button" parent="PauseContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("FontFile_knqa7")
+theme_override_fonts/font = ExtResource("2_5d2l8")
 theme_override_font_sizes/font_size = 20
 text = "Quit Game"
 

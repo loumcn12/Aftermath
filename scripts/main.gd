@@ -22,6 +22,8 @@ var tile_origins := {
 var building_scenes := {}  # Dictionary: "2x1" -> [PackedScene]
 
 func _ready() -> void:
+	if OS.get_name() == "Web":
+		$env/WorldEnvironment.environment.background_energy_multiplier = 1.3
 	pause_menu.hide()
 	get_tree().paused = false
 	hud.visible = true

@@ -1,99 +1,23 @@
-[gd_scene load_steps=16 format=3 uid="uid://b5u6tg7siuhu3"]
+[gd_scene load_steps=10 format=3 uid="uid://b5u6tg7siuhu3"]
 
 [ext_resource type="Texture2D" uid="uid://by3rpc8q6xvbm" path="res://assets/crosshair.png" id="2_g2els"]
 [ext_resource type="Script" uid="uid://di65wp5hhfdbu" path="res://scripts/player_hud.gd" id="2_qhqgy"]
 [ext_resource type="Script" uid="uid://bw1balal8eq6t" path="res://scripts/player.gd" id="3_ob08u"]
 [ext_resource type="Script" uid="uid://bmckmosxruiu" path="res://scripts/fps_label.gd" id="4_dqkch"]
+[ext_resource type="FontFile" uid="uid://c71hixmpr8htu" path="res://assets/Misc/VCR_OSD_MONO_1.001.ttf" id="4_qlg0r"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tevmw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m04g1"]
 height = 1.2
 
-[sub_resource type="FontFile" id="FontFile_dqkch"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-
-[sub_resource type="FontFile" id="FontFile_qlg0r"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-
-[sub_resource type="FontFile" id="FontFile_tuyoq"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-
 [sub_resource type="LabelSettings" id="LabelSettings_fjrip"]
-font = SubResource("FontFile_tuyoq")
-
-[sub_resource type="FontFile" id="FontFile_smehm"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/17/0/ascent = 0.0
-cache/0/17/0/descent = 0.0
-cache/0/17/0/underline_position = 0.0
-cache/0/17/0/underline_thickness = 0.0
-cache/0/17/0/scale = 1.0
-cache/0/18/0/ascent = 0.0
-cache/0/18/0/descent = 0.0
-cache/0/18/0/underline_position = 0.0
-cache/0/18/0/underline_thickness = 0.0
-cache/0/18/0/scale = 1.0
-cache/0/19/0/ascent = 0.0
-cache/0/19/0/descent = 0.0
-cache/0/19/0/underline_position = 0.0
-cache/0/19/0/underline_thickness = 0.0
-cache/0/19/0/scale = 1.0
-cache/0/20/0/ascent = 0.0
-cache/0/20/0/descent = 0.0
-cache/0/20/0/underline_position = 0.0
-cache/0/20/0/underline_thickness = 0.0
-cache/0/20/0/scale = 1.0
-cache/0/21/0/ascent = 0.0
-cache/0/21/0/descent = 0.0
-cache/0/21/0/underline_position = 0.0
-cache/0/21/0/underline_thickness = 0.0
-cache/0/21/0/scale = 1.0
-cache/0/22/0/ascent = 0.0
-cache/0/22/0/descent = 0.0
-cache/0/22/0/underline_position = 0.0
-cache/0/22/0/underline_thickness = 0.0
-cache/0/22/0/scale = 1.0
+font = ExtResource("4_qlg0r")
+font_size = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_ur7pv"]
-font = SubResource("FontFile_smehm")
-
-[sub_resource type="FontFile" id="FontFile_y4r1p"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-
-[sub_resource type="FontFile" id="FontFile_d2wvv"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-
-[sub_resource type="FontFile" id="FontFile_3v2ag"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
+font = ExtResource("4_qlg0r")
+font_size = 20
 
 [node name="player" type="CharacterBody3D" groups=["player"]]
 collision_layer = 2
@@ -161,16 +85,17 @@ anchor_bottom = 1.0
 offset_top = -58.0
 offset_right = 252.0
 grow_vertical = 0
+alignment = 1
 
 [node name="HealthBar" type="ProgressBar" parent="PlayerHud/Control/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("FontFile_dqkch")
+theme_override_fonts/font = ExtResource("4_qlg0r")
 step = 1.0
 value = 100.0
 
 [node name="StaminaBar" type="ProgressBar" parent="PlayerHud/Control/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("FontFile_qlg0r")
+theme_override_fonts/font = ExtResource("4_qlg0r")
 step = 1.0
 value = 100.0
 
@@ -180,10 +105,11 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 255.0
-offset_top = -55.0
+offset_top = -60.0
 offset_right = 507.0
-offset_bottom = 3.0
+offset_bottom = 1.0
 grow_vertical = 0
+alignment = 1
 
 [node name="Label" type="Label" parent="PlayerHud/Control/VBoxContainer2"]
 layout_mode = 2
@@ -211,7 +137,7 @@ offset_right = 75.0
 offset_bottom = 282.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = SubResource("FontFile_y4r1p")
+theme_override_fonts/font = ExtResource("4_qlg0r")
 text = "Press \"E\" to pick up"
 horizontal_alignment = 1
 
@@ -229,7 +155,7 @@ offset_right = 75.0
 offset_bottom = 282.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = SubResource("FontFile_d2wvv")
+theme_override_fonts/font = ExtResource("4_qlg0r")
 text = "LMB to Punch"
 horizontal_alignment = 1
 
@@ -237,5 +163,5 @@ horizontal_alignment = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-theme_override_fonts/font = SubResource("FontFile_3v2ag")
+theme_override_fonts/font = ExtResource("4_qlg0r")
 script = ExtResource("4_dqkch")

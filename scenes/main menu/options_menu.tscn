@@ -1,45 +1,21 @@
-[gd_scene load_steps=12 format=3 uid="uid://i813vheb5uer"]
+[gd_scene load_steps=11 format=3 uid="uid://i813vheb5uer"]
 
 [ext_resource type="Script" uid="uid://ucstw6hvc0sr" path="res://scripts/options_menu.gd" id="1_hpoe8"]
 [ext_resource type="AudioStream" uid="uid://dxsf0alrbk1js" path="res://assets/audio/error.wav" id="2_b7gl8"]
 [ext_resource type="Texture2D" uid="uid://ds07eke6ryjpl" path="res://assets/AftermathMenuBlank.png" id="2_hfu7f"]
-
-[sub_resource type="FontFile" id="FontFile_hfu7f"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
+[ext_resource type="FontFile" uid="uid://c71hixmpr8htu" path="res://assets/Misc/VCR_OSD_MONO_1.001.ttf" id="3_nbf5j"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nbf5j"]
+font = ExtResource("3_nbf5j")
 
-[sub_resource type="FontFile" id="FontFile_yy6rg"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
+[sub_resource type="LabelSettings" id="LabelSettings_qjmon"]
+font = ExtResource("3_nbf5j")
 
-[sub_resource type="FontFile" id="FontFile_qjmon"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
+[sub_resource type="LabelSettings" id="LabelSettings_pdynd"]
+font = ExtResource("3_nbf5j")
 
-[sub_resource type="FontFile" id="FontFile_pdynd"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-
-[sub_resource type="FontFile" id="FontFile_rjidq"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
+[sub_resource type="LabelSettings" id="LabelSettings_rjidq"]
+font = ExtResource("3_nbf5j")
 
 [sub_resource type="FontFile" id="FontFile_nbf5j"]
 cache/0/16/0/ascent = 0.0
@@ -49,6 +25,7 @@ cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_yy6rg"]
+font = ExtResource("3_nbf5j")
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -89,7 +66,6 @@ layout_mode = 2
 
 [node name="fullscreenlabel" type="Label" parent="VBoxContainer/fullscreensetting"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("FontFile_hfu7f")
 text = "Fullscreen Mode"
 label_settings = SubResource("LabelSettings_nbf5j")
 
@@ -103,8 +79,8 @@ layout_mode = 2
 
 [node name="crosshairlabel" type="Label" parent="VBoxContainer/crosshairsetting"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("FontFile_yy6rg")
 text = "Enable Crosshair"
+label_settings = SubResource("LabelSettings_qjmon")
 
 [node name="crosshairbutton" type="CheckButton" parent="VBoxContainer/crosshairsetting"]
 layout_mode = 2
@@ -116,8 +92,8 @@ layout_mode = 2
 
 [node name="fpslabel" type="Label" parent="VBoxContainer/FPSsetting"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("FontFile_qjmon")
 text = "Show FPS"
+label_settings = SubResource("LabelSettings_pdynd")
 
 [node name="fpsbutton" type="CheckButton" parent="VBoxContainer/FPSsetting"]
 layout_mode = 2
@@ -129,12 +105,12 @@ layout_mode = 2
 
 [node name="windowmodelabel" type="Label" parent="VBoxContainer/windowmodesetting"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("FontFile_pdynd")
 text = "Window Mode     "
+label_settings = SubResource("LabelSettings_rjidq")
 
 [node name="OptionButton" type="OptionButton" parent="VBoxContainer/windowmodesetting"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("FontFile_rjidq")
+theme_override_fonts/font = ExtResource("3_nbf5j")
 selected = 1
 item_count = 2
 popup/item_0/text = "Windowed"
@@ -144,6 +120,7 @@ popup/item_1/id = 1
 
 [node name="BackButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_nbf5j")
 theme_override_font_sizes/font_size = 30
 text = "Back"
 
