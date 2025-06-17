@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cdtp3c80v85go"]
+[gd_scene load_steps=8 format=3 uid="uid://cdtp3c80v85go"]
 
 [ext_resource type="Script" uid="uid://f8fo33ievb68" path="res://scripts/main_menu.gd" id="1_cbjxn"]
 [ext_resource type="AudioStream" uid="uid://dxsf0alrbk1js" path="res://assets/audio/error.wav" id="2_8w606"]
-[ext_resource type="Texture2D" uid="uid://bumkkkp42sg7u" path="res://assets/AftermathMenu.png" id="2_vifqf"]
+
+[sub_resource type="SystemFont" id="SystemFont_okfgx"]
+oversampling = 10.0
 
 [sub_resource type="FontFile" id="FontFile_vifqf"]
 cache/0/16/0/ascent = 0.0
@@ -13,8 +15,11 @@ cache/0/16/0/scale = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_8w606"]
 
+[sub_resource type="SystemFont" id="SystemFont_8w606"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_okfgx"]
-font_size = 110
+font = SubResource("SystemFont_8w606")
+font_size = 100
 font_color = Color(0.960784, 0.733333, 0.411765, 1)
 
 [node name="MainMenu" type="Control"]
@@ -27,18 +32,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cbjxn")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = 120.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1, 0.844)
-texture = ExtResource("2_vifqf")
-expand_mode = 1
-
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -46,29 +39,31 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 185.0
-offset_top = -111.0
-offset_right = 255.0
-offset_bottom = 40.0
+offset_left = -37.5
+offset_top = -75.5
+offset_right = 37.5
+offset_bottom = 75.5
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(3.24, 2.365)
-theme_override_constants/separation = 7
 
 [node name="startbutton" type="Button" parent="VBoxContainer"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-text = " "
+theme_override_fonts/font = SubResource("SystemFont_okfgx")
+theme_override_font_sizes/font_size = 50
+text = " Start
+"
 
 [node name="optionsbutton" type="Button" parent="VBoxContainer"]
-self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-text = " "
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 50
+text = " Options"
 
 [node name="quitbutton" type="Button" parent="VBoxContainer"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-text = " "
+theme_override_font_sizes/font_size = 50
+text = " Quit"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_8w606")
@@ -88,13 +83,19 @@ label_settings = SubResource("LabelSettings_8w606")
 vertical_alignment = 2
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 264.0
-offset_top = 135.0
-offset_right = 1005.0
-offset_bottom = 279.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -370.0
+offset_top = 10.0
+offset_right = 371.0
+offset_bottom = 166.0
+grow_horizontal = 2
 text = "AFTERMATH"
 label_settings = SubResource("LabelSettings_okfgx")
+horizontal_alignment = 1
+vertical_alignment = 3
 
 [connection signal="pressed" from="VBoxContainer/startbutton" to="." method="_on_startbutton_pressed"]
 [connection signal="pressed" from="VBoxContainer/optionsbutton" to="." method="_on_optionsbutton_pressed"]

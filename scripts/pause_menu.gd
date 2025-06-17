@@ -4,10 +4,12 @@ extends Control
 @onready var PauseContainer = $PauseContainer
 @onready var marginContainer = $MarginContainer
 @onready var buttonSound = $AudioStreamPlayer2D
+@onready var versionLabel = $VersionLabel
 
 func _ready():
 	if OS.get_name() == "Web":
 		quitbutton.visible = false
+	versionLabel.text = "Version " + str(ProjectSettings.get_setting("application/config/version"))
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("escape") and main.paused:
@@ -49,4 +51,4 @@ func _on_returnto_menu_pressed() -> void:
 	buttonSound.play()
 	await get_tree().create_timer(0.2).timeout
 	main.pauseMenu()
-	get_tree().change_scene_to_file("res://scenes/main menu/main_menu.tscn")
+	get_tree().change_scene_to_file(ProjectSettings.get_setting("application/run/main_scene"))

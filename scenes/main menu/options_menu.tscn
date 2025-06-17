@@ -1,8 +1,54 @@
-[gd_scene load_steps=4 format=3 uid="uid://i813vheb5uer"]
+[gd_scene load_steps=12 format=3 uid="uid://i813vheb5uer"]
 
 [ext_resource type="Script" uid="uid://ucstw6hvc0sr" path="res://scripts/options_menu.gd" id="1_hpoe8"]
 [ext_resource type="AudioStream" uid="uid://dxsf0alrbk1js" path="res://assets/audio/error.wav" id="2_b7gl8"]
 [ext_resource type="Texture2D" uid="uid://ds07eke6ryjpl" path="res://assets/AftermathMenuBlank.png" id="2_hfu7f"]
+
+[sub_resource type="FontFile" id="FontFile_hfu7f"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_nbf5j"]
+
+[sub_resource type="FontFile" id="FontFile_yy6rg"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="FontFile" id="FontFile_qjmon"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="FontFile" id="FontFile_pdynd"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="FontFile" id="FontFile_rjidq"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="FontFile" id="FontFile_nbf5j"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_yy6rg"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -14,6 +60,7 @@ grow_vertical = 2
 script = ExtResource("1_hpoe8")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,7 +89,9 @@ layout_mode = 2
 
 [node name="fullscreenlabel" type="Label" parent="VBoxContainer/fullscreensetting"]
 layout_mode = 2
+theme_override_fonts/font = SubResource("FontFile_hfu7f")
 text = "Fullscreen Mode"
+label_settings = SubResource("LabelSettings_nbf5j")
 
 [node name="fullscreenbutton" type="CheckButton" parent="VBoxContainer/fullscreensetting"]
 layout_mode = 2
@@ -54,6 +103,7 @@ layout_mode = 2
 
 [node name="crosshairlabel" type="Label" parent="VBoxContainer/crosshairsetting"]
 layout_mode = 2
+theme_override_fonts/font = SubResource("FontFile_yy6rg")
 text = "Enable Crosshair"
 
 [node name="crosshairbutton" type="CheckButton" parent="VBoxContainer/crosshairsetting"]
@@ -66,6 +116,7 @@ layout_mode = 2
 
 [node name="fpslabel" type="Label" parent="VBoxContainer/FPSsetting"]
 layout_mode = 2
+theme_override_fonts/font = SubResource("FontFile_qjmon")
 text = "Show FPS"
 
 [node name="fpsbutton" type="CheckButton" parent="VBoxContainer/FPSsetting"]
@@ -78,10 +129,12 @@ layout_mode = 2
 
 [node name="windowmodelabel" type="Label" parent="VBoxContainer/windowmodesetting"]
 layout_mode = 2
+theme_override_fonts/font = SubResource("FontFile_pdynd")
 text = "Window Mode     "
 
 [node name="OptionButton" type="OptionButton" parent="VBoxContainer/windowmodesetting"]
 layout_mode = 2
+theme_override_fonts/font = SubResource("FontFile_rjidq")
 selected = 1
 item_count = 2
 popup/item_0/text = "Windowed"
@@ -91,9 +144,24 @@ popup/item_1/id = 1
 
 [node name="BackButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Back"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_b7gl8")
+
+[node name="VersionLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 99.0
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_fonts/font = SubResource("FontFile_nbf5j")
+text = "Version 0.0.0"
+label_settings = SubResource("LabelSettings_yy6rg")
+vertical_alignment = 2
 
 [connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

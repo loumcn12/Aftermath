@@ -5,10 +5,12 @@ extends Control
 var pausemenu
 @onready var fpsbutton = $VBoxContainer/FPSsetting/fpsbutton
 @onready var buttonSound = $AudioStreamPlayer2D
+@onready var versionLabel = $VersionLabel
 
 # Calls when the scene is loaded
 func _ready() -> void:
 	# Disables the fullscreen button for web browsers (Handled separately)
+	versionLabel.text = "Version " + str(ProjectSettings.get_setting("application/config/version"))
 	if OS.get_name() == "Web":
 		fullscreen.disabled = true
 	if "OptionsMenu" in str(get_tree().current_scene):
@@ -46,7 +48,9 @@ func _process(_delta: float) -> void:
 func _on_back_button_pressed() -> void:
 	buttonSound.play()
 	await get_tree().create_timer(0.2).timeout
-	if "OptionsMenu" in str(get_tree().current_scene):
-		get_tree().change_scene_to_file("res://scenes/main menu/main_menu.tscn")
+	
+	if "MainMenu" in str(get_tree().current_scene):
+		get_node("../MainMenu/VBoxContainer").visible = true
+		$"../OptionsMenu".visible = false
 	else:
 		pausemenu._cycleMenu()
