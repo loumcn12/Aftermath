@@ -10,6 +10,7 @@ font = ExtResource("2_5d2l8")
 font_size = 30
 
 [sub_resource type="SystemFont" id="SystemFont_5d2l8"]
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_71k7c"]
 font = SubResource("SystemFont_5d2l8")
@@ -17,6 +18,9 @@ font_size = 100
 font_color = Color(0.960784, 0.733333, 0.411765, 1)
 
 [sub_resource type="FontFile" id="FontFile_cmnsq"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0

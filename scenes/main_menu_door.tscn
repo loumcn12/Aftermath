@@ -3,16 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://d1hi0wlisv32i" path="res://assets/Misc/MainMenuDoor.glb" id="1_heijw"]
 [ext_resource type="Script" uid="uid://crrl5cwxw7h0o" path="res://scenes/main_menu_door.gd" id="1_ob2ms"]
 
-[sub_resource type="Animation" id="Animation_heijw"]
-resource_name = "menu_door_open"
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 0, 11.0617, 0)
-
 [sub_resource type="Animation" id="Animation_ob2ms"]
 length = 0.001
 tracks/0/type = "position_3d"
@@ -22,6 +12,16 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_heijw"]
+resource_name = "menu_door_open"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 0, 11.0617, 0)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3octg"]
 _data = {

@@ -110,14 +110,16 @@ func _physics_process(delta):
 				if Input.is_action_just_pressed("interact"):
 					heal(collider.healthpoints)
 					collider.queue_free()
+			elif !collider.is_in_group("health"):
+				pickup_notifier.visible = false
 					
 			if collider.is_in_group("enemy"):
 				punch_notifier.visible = true
 				
 				if Input.is_action_just_pressed("mouse1"):
 					collider._damage(10)
-			
-					
+			elif !collider.is_in_group("enemy"):
+				punch_notifier.visible = false
 	else:
 		pickup_notifier.visible = false
 		punch_notifier.visible = false

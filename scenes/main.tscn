@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://djunwlie6gikb"]
+[gd_scene load_steps=17 format=3 uid="uid://djunwlie6gikb"]
 
 [ext_resource type="Texture2D" uid="uid://cwl4jn6tuy0pb" path="res://assets/textures/dev/grids/Dark/texture_07.png" id="1_qyfli"]
 [ext_resource type="Script" uid="uid://dqoh3msg73gs4" path="res://scripts/main.gd" id="1_tbgi4"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cope3wve2dub1" path="res://scenes/pause_menu.tscn" id="5_tefeu"]
 [ext_resource type="PackedScene" uid="uid://cwupnc84odj3m" path="res://scenes/medball.tscn" id="5_tipki"]
 [ext_resource type="PackedScene" uid="uid://dt4cwmc0uynan" path="res://scenes/enemy.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://cpp18wnxwfrpl" path="res://scenes/streetgrid.tscn" id="8_choun"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_tefeu"]
 vertices = PackedVector3Array(2.99998, 1.25, -11.3257, 5.49998, 1.25, -11.3257, 5.49998, 1.25, -13.8257, 6.49998, 1.25, -14.0757, 6.49998, 1.25, -26.0757, -9.50002, 1.25, -9.57569, 2.49998, 1.25, -9.57569, -9.50002, 1.25, -26.0757, 7.74998, 1.25, -13.8257, 7.74998, 1.25, -11.0757, 9.74998, 1.25, -10.8257, 14.5, 1.25, -11.0757, 9.49998, 1.25, -8.82569, 7.74998, 1.25, -8.82569, 7.74998, 1.25, -4.32569, 15, 1.25, -11.0757, 15, 1.25, -26.0757, 16.25, 1.25, -9.57569, 26.75, 1.25, -9.57569, 26.75, 1.25, -26.0757, 6.49998, 4.25, -10.5757, 6.24998, 4.25, -13.0757, 6.24998, 4.25, -10.5757, 6.24998, 4.25, -9.82569, 6.49998, 4.25, -9.82569, 8.74998, 4.25, -10.3257, 3.74998, 4.25, -10.3257, 8.99998, 4.25, -3.57569, 8.49998, 4.25, -3.82569, 7.49998, 4.25, -2.57569, 6.99998, 4.25, -1.57569, 6.24998, 4.25, -1.57569, 6.49998, 4.25, -2.82569, 5.49998, 1.25, -2.82569, 5.49998, 1.25, -8.82569, 2.74998, 1.25, -8.82569, -9.50002, 1.25, -2.82569, 7.74998, 1.25, -0.575689, 6.74998, 1.25, -0.575689, 6.74998, 1.25, 9.42431, 16.25, 1.25, -9.07569, 26.75, 1.25, 9.42431, 5.49998, 1.25, -0.825689, -9.50002, 1.25, 9.42431)
@@ -45,6 +46,7 @@ volumetric_fog_sky_affect = 0.6
 script = ExtResource("1_tbgi4")
 
 [node name="stage" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.87133, 0.169055, 25.7382)
 
 [node name="NavigationRegion" type="NavigationRegion3D" parent="stage"]
 navigation_mesh = SubResource("NavigationMesh_tefeu")
@@ -165,25 +167,29 @@ process_mode = 2
 visible = false
 
 [node name="player" parent="." instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.03718, 0, 14.9207)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.03718, 1.52364, -8.99639)
 
-[node name="Enemy" parent="." instance=ExtResource("7_o6xl0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+[node name="Grid" type="Node3D" parent="."]
+
+[node name="streetgrid" parent="Grid" instance=ExtResource("8_choun")]
 
 [node name="medball" parent="." instance=ExtResource("5_tipki")]
-transform = Transform3D(0.505717, 0, 0, 0, 0.505717, 0, 0, 0, 0.505717, 4.19961, 0.505717, 7.03134)
+transform = Transform3D(0.505717, 0, 0, 0, 0.505717, 0, 0, 0, 0.505717, 1.87462, 0.505717, -3.60901)
 
 [node name="medball2" parent="." instance=ExtResource("5_tipki")]
-transform = Transform3D(0.505717, 0, 0, 0, 0.505717, 0, 0, 0, 0.505717, -4.74043, 0.505717, -4.83157)
+transform = Transform3D(0.505717, 0, 0, 0, 0.505717, 0, 0, 0, 0.505717, 1.52714, 0.505717, -4.83157)
 
 [node name="medball3" parent="." instance=ExtResource("5_tipki")]
-transform = Transform3D(0.507937, 0, 0, 0, 0.507937, 0, 0, 0, 0.507937, 15.3517, 0.505718, -17.1168)
+transform = Transform3D(0.507937, 0, 0, 0, 0.507937, 0, 0, 0, 0.507937, 0.984781, 0.505718, -6.61051)
+
+[node name="Enemy" parent="." instance=ExtResource("7_o6xl0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0547, 1.16906, 30.6094)
 
 [node name="Enemy2" parent="." instance=ExtResource("7_o6xl0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.48439, 1, -17.7549)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.9191, 1.16906, 15.3955)
 
 [node name="Enemy3" parent="." instance=ExtResource("7_o6xl0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.7712, 1, -12.35)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9373, 1.16905, 7.02131)
 
 [node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05254, 0, -40.2024)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.0824, 0, -39.1225)

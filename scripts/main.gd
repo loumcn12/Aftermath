@@ -10,13 +10,37 @@ var paused = false
 
 # Coordinates for each building size
 var tile_origins := {
-	"3x3": [Vector3(0, 0, -120)],
-	"3x2": [Vector3(-64, 0, 0), Vector3(-64, 0, -40), Vector3(-64, 0, -80), Vector3(-64, 0, -120)],
-	"3x1": [Vector3(-128, 0, 0), Vector3(-128, 0, -40), Vector3(-128, 0, -80), Vector3(-128, 0, -120)],
-	"2x2": [Vector3(64, 0, 0), Vector3(64, 0, -40), Vector3(64, 0, -80), Vector3(64, 0, -120)],
-	"2x1": [Vector3(128, 0, 0), Vector3(128, 0, -40), Vector3(128, 0, -80), Vector3(128, 0, -120)],
-	"1x1": [Vector3(192, 0, 0), Vector3(192, 0, -40), Vector3(192, 0, -80), Vector3(192, 0, -120),
-			Vector3(-192, 0, 0), Vector3(-192, 0, -40), Vector3(-192, 0, -80), Vector3(-192, 0, -120)]
+	"1x1": [
+		{ "position": Vector3(30, 0, -30), "rotation": Vector3(0, 0, 0) },
+		{ "position": Vector3(50, 0, -70), "rotation": Vector3(0, 90, 0) },
+		{ "position": Vector3(50, 0, -30), "rotation": Vector3(0, -90, 0) },
+		{ "position": Vector3(30, 0, -190), "rotation": Vector3(0, 0, 0) },
+		{ "position": Vector3(30, 0, -210), "rotation": Vector3(0, 0, 0) },
+		{ "position": Vector3(30, 0, -230), "rotation": Vector3(0, 0, 0) },
+		{ "position": Vector3(70, 0, -270), "rotation": Vector3(0, 180, 0) }
+	],
+	"2x1": [
+		{ "position": Vector3(30, 0, -60), "rotation": Vector3(0, 0, 0) },
+		{ "position": Vector3(70, 0, -140), "rotation": Vector3(0, 180, 0) },
+		{ "position": Vector3(40, 0, -270), "rotation": Vector3(0, 90, 0) },
+		{ "position": Vector3(60, 0, -470), "rotation": Vector3(0, -90, 0) }
+	],
+	"2x2": [
+		{ "position": Vector3(40, 0, -140), "rotation": Vector3(0, 0, 0) },
+		{ "position": Vector3(60, 0, -440), "rotation": Vector3(0, 180, 0) }
+	],
+	"3x1": [
+		{ "position": Vector3(70, 0, -50), "rotation": Vector3(0, 180, 0) },
+		{ "position": Vector3(50, 0, -110), "rotation": Vector3(0, -90, 0) },
+		{ "position": Vector3(30, 0, -450), "rotation": Vector3(0, 0, 0) }
+	],
+	"3x2": [
+		{ "position": Vector3(60, 0, -210), "rotation": Vector3(0, 180, 0) },
+		{ "position": Vector3(50, 0, -300), "rotation": Vector3(0, -90, 0) }
+	],
+	"3x3": [
+		{ "position": Vector3(50, 0, -370), "rotation": Vector3(0, 0, 0) }
+	]
 }
 
 var building_scenes := {}  # Dictionary: "2x1" -> [PackedScene]
@@ -72,14 +96,17 @@ func place_buildings():
 	for size_key in tile_origins.keys():
 		if not building_scenes.has(size_key):
 			continue
-		for origin in tile_origins[size_key]:
+		for tile_data in tile_origins[size_key]:
+			var position = tile_data["position"]
+			var rotation_degrees = tile_data["rotation"]
 			var building_scene = building_scenes[size_key].pick_random()
 			if building_scene:
-				place_building(building_scene, origin)
-
-func place_building(scene: PackedScene, origin: Vector3):
+				place_building(building_scene, position, rotation_degrees)
+				
+func place_building(scene: PackedScene, origin: Vector3, rotation_degrees: Vector3):
 	var instance = scene.instantiate()
 	instance.transform.origin = origin
+	instance.rotation_degrees = rotation_degrees
 	add_child(instance)
 
 func _process(_delta: float) -> void:
