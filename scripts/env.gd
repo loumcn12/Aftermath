@@ -65,7 +65,5 @@ func update_day_night(progress: float) -> void:
 	var light_factor = clamp(sin(progress * PI * 2.0), 0.0, 1.0)
 
 	# Light & Exposure
-	sun.light_energy = lerp(0.3, 2.0, light_factor)
-	env.ambient_light_energy = lerp(0.3, 1.0, light_factor)
-	env.tonemap_exposure = lerp(0.3, 1.0, light_factor)
-	env.tonemap_white = lerp(16.0, 2.0, light_factor)
+	sun.light_energy = lerp(0.1, 2.0, light_factor)
+	env.background_energy_multiplier = lerp(0.01, 1.0, light_factor)

@@ -33,9 +33,7 @@ sky_material = SubResource("PanoramaSkyMaterial_85g3d")
 [sub_resource type="Environment" id="Environment_7jrki"]
 background_mode = 2
 sky = SubResource("Sky_85g3d")
-tonemap_mode = 2
 glow_enabled = true
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.1
 volumetric_fog_albedo = Color(0.9, 0.9, 0.9, 1)
 volumetric_fog_emission_energy = 0.0
@@ -55,6 +53,12 @@ navigation_mesh = SubResource("NavigationMesh_tefeu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.68538, -0.5, -8.28784)
 use_collision = true
 size = Vector3(37.3708, 1, 36.5757)
+material = SubResource("StandardMaterial3D_4ypqe")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="stage/NavigationRegion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 244.493, -5.82415, -277.169)
+use_collision = true
+size = Vector3(508.987, 1, 510.556)
 material = SubResource("StandardMaterial3D_4ypqe")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="stage/NavigationRegion"]
@@ -192,4 +196,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.9191, 1.16906, 15.3955)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9373, 1.16905, 7.02131)
 
 [node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.0824, 0, -39.1225)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.2725, 0, -28.2074)
