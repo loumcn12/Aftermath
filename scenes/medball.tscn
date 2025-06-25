@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bu5r2uns3m4s1" path="res://assets/Items/medkit.glb" id="2_sbbdb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sbbdb"]
-size = Vector3(1.10254, 0.432617, 1.01596)
+size = Vector3(1.10254, 0.960938, 0.379883)
 
 [node name="medball" type="StaticBody3D" groups=["health"]]
 transform = Transform3D(0.505717, 0, 0, 0, 0.505717, 0, 0, 0, 0.505717, 0, 0, 0)
@@ -13,5 +13,5 @@ script = ExtResource("1_sbbdb")
 [node name="medkit" parent="." instance=ExtResource("2_sbbdb")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0532074)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0544433, -0.0014496)
 shape = SubResource("BoxShape3D_sbbdb")
