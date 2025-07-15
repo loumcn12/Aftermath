@@ -1,15 +1,15 @@
 [gd_scene load_steps=2 format=3 uid="uid://ckgmx5fed770t"]
 
-[ext_resource type="PackedScene" uid="uid://dwvxc12e0dcem" path="res://assets/Misc/streetlamp.glb" id="1_dhixf"]
+[ext_resource type="PackedScene" uid="uid://b4qrmc50oudwh" path="res://assets/Misc/Streetlamp.glb" id="1_dhixf"]
 
 [node name="Streetlamp" type="Node3D"]
 
-[node name="streetlamp" parent="." instance=ExtResource("1_dhixf")]
-
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(0.976432, 9.43406e-09, -0.215826, 0.215826, -4.26812e-08, 0.976432, 0, -1, -4.37114e-08, -3.5125, 7.08325, 0)
+transform = Transform3D(0.976432, 9.43405e-09, -0.215826, 0.215826, -4.26812e-08, 0.976432, 0, -1, -4.37114e-08, 0.893916, 10.0025, 0)
 light_color = Color(0.949019, 0.839015, 1.54018e-06, 1)
 light_energy = 1000.0
 light_volumetric_fog_energy = 5.04
-spot_range = 10.65
-spot_angle = 29.2685
+spot_range = 14.9046
+spot_angle = 36.2689
+
+[node name="Streetlamp" parent="." instance=ExtResource("1_dhixf")]

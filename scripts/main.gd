@@ -97,16 +97,16 @@ func place_buildings():
 		if not building_scenes.has(size_key):
 			continue
 		for tile_data in tile_origins[size_key]:
-			var position = tile_data["position"]
-			var rotation_degrees = tile_data["rotation"]
+			var building_position = tile_data["position"]
+			var building_rotation_degrees = tile_data["rotation"]
 			var building_scene = building_scenes[size_key].pick_random()
 			if building_scene:
-				place_building(building_scene, position, rotation_degrees)
+				place_building(building_scene, building_position, building_rotation_degrees)
 				
-func place_building(scene: PackedScene, origin: Vector3, rotation_degrees: Vector3):
+func place_building(scene: PackedScene, origin: Vector3, building_rotation_degrees: Vector3):
 	var instance = scene.instantiate()
 	instance.transform.origin = origin
-	instance.rotation_degrees = rotation_degrees
+	instance.rotation_degrees = building_rotation_degrees
 	add_child(instance)
 
 func _process(_delta: float) -> void:

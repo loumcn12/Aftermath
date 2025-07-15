@@ -1,7 +1,5 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpp18wnxwfrpl"]
+[gd_scene load_steps=2 format=3 uid="uid://bwih58pbrrsi1"]
 
-[ext_resource type="PackedScene" uid="uid://uomussmp6key" path="res://assets/World/streetgrid.glb" id="1_05mkw"]
+[ext_resource type="PackedScene" uid="uid://dvudqrjm5p5bw" path="res://assets/World/streetgrid.glb" id="1_05mkw"]
 
-[node name="streetgrid" type="Node3D"]
-
-[node name="streetgrid" parent="." instance=ExtResource("1_05mkw")]
+[node name="streetgrid" instance=ExtResource("1_05mkw")]

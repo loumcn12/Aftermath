@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dwvxc12e0dcem"
-path="res://.godot/imported/streetlamp.glb-16290bf1f8f9ac42a8ad1910787faf91.scn"
+uid="uid://dm0cvtpyrpj82"
+path="res://.godot/imported/Streetlamp.glb-c11fd6c469117904b4333d7d7e008bdc.scn"
 
 [deps]
 
-source_file="res://assets/Misc/streetlamp.glb"
-dest_files=["res://.godot/imported/streetlamp.glb-16290bf1f8f9ac42a8ad1910787faf91.scn"]
+source_file="res://assets/Misc/Streetlamp.glb"
+dest_files=["res://.godot/imported/Streetlamp.glb-c11fd6c469117904b4333d7d7e008bdc.scn"]
 
 [params]
 

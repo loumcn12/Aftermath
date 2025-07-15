@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cope3wve2dub1" path="res://scenes/pause_menu.tscn" id="5_tefeu"]
 [ext_resource type="PackedScene" uid="uid://cwupnc84odj3m" path="res://scenes/medball.tscn" id="5_tipki"]
 [ext_resource type="PackedScene" uid="uid://dt4cwmc0uynan" path="res://scenes/enemy.tscn" id="7_o6xl0"]
-[ext_resource type="PackedScene" uid="uid://cpp18wnxwfrpl" path="res://scenes/streetgrid.tscn" id="8_choun"]
+[ext_resource type="PackedScene" uid="uid://bwih58pbrrsi1" path="res://scenes/streetgrid.tscn" id="8_choun"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_tefeu"]
 vertices = PackedVector3Array(2.99998, 1.25, -11.3257, 5.49998, 1.25, -11.3257, 5.49998, 1.25, -13.8257, 6.49998, 1.25, -14.0757, 6.49998, 1.25, -26.0757, -9.50002, 1.25, -9.57569, 2.49998, 1.25, -9.57569, -9.50002, 1.25, -26.0757, 7.74998, 1.25, -13.8257, 7.74998, 1.25, -11.0757, 9.74998, 1.25, -10.8257, 14.5, 1.25, -11.0757, 9.49998, 1.25, -8.82569, 7.74998, 1.25, -8.82569, 7.74998, 1.25, -4.32569, 15, 1.25, -11.0757, 15, 1.25, -26.0757, 16.25, 1.25, -9.57569, 26.75, 1.25, -9.57569, 26.75, 1.25, -26.0757, 6.49998, 4.25, -10.5757, 6.24998, 4.25, -13.0757, 6.24998, 4.25, -10.5757, 6.24998, 4.25, -9.82569, 6.49998, 4.25, -9.82569, 8.74998, 4.25, -10.3257, 3.74998, 4.25, -10.3257, 8.99998, 4.25, -3.57569, 8.49998, 4.25, -3.82569, 7.49998, 4.25, -2.57569, 6.99998, 4.25, -1.57569, 6.24998, 4.25, -1.57569, 6.49998, 4.25, -2.82569, 5.49998, 1.25, -2.82569, 5.49998, 1.25, -8.82569, 2.74998, 1.25, -8.82569, -9.50002, 1.25, -2.82569, 7.74998, 1.25, -0.575689, 6.74998, 1.25, -0.575689, 6.74998, 1.25, 9.42431, 16.25, 1.25, -9.07569, 26.75, 1.25, 9.42431, 5.49998, 1.25, -0.825689, -9.50002, 1.25, 9.42431)
@@ -171,7 +171,7 @@ process_mode = 2
 visible = false
 
 [node name="player" parent="." instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.03718, 1.52364, -8.99639)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 431.625, 0.726949, 82.9854)
 
 [node name="Grid" type="Node3D" parent="."]
 
