@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckgmx5fed770t"]
+[gd_scene load_steps=3 format=3 uid="uid://ckgmx5fed770t"]
 
 [ext_resource type="PackedScene" uid="uid://dm0cvtpyrpj82" path="res://assets/Misc/Streetlamp.glb" id="1_dhixf"]
+[ext_resource type="Script" uid="uid://blwpwfy3jpp8n" path="res://scripts/streetlamp.gd" id="1_ku0tr"]
 
 [node name="Streetlamp" type="Node3D"]
+script = ExtResource("1_ku0tr")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(0.976432, 9.43405e-09, -0.215826, 0.215826, -4.26812e-08, 0.976432, 0, -1, -4.37114e-08, 0.893916, 10.0025, 0)

@@ -42,16 +42,16 @@ fov = 20.0
 environment = SubResource("Environment_ymex3")
 
 [node name="Streetlamp2" parent="." instance=ExtResource("3_lsx8b")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -31.6245)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6.18447, 0, -31.6245)
 
 [node name="Streetlamp3" parent="." instance=ExtResource("3_lsx8b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.017)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.47494, 0, 11.017)
 
 [node name="Streetlamp4" parent="." instance=ExtResource("3_lsx8b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 100.678)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.47494, 0, 100.678)
 
 [node name="Streetlamp5" parent="." instance=ExtResource("3_lsx8b")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 54.3696)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6.18447, 0, 54.3696)
 
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 41.2041)
