@@ -41,6 +41,7 @@ var was_on_floor_last_frame = true
 var max_fall_speed = 0.0
 const FALL_DAMAGE_THRESHOLD = 12.0
 const FALL_DAMAGE_MULTIPLIER = 15
+var healthpacks = 0
 
 # Head bobbing vars
 
@@ -96,6 +97,10 @@ func _input(event):
 		reset()
 
 func _physics_process(delta):
+	if healthpacks < 3:
+		$PlayerHud/Control/Items.text = "Current Objective: Collect Medpacks (" + str(healthpacks) + "/3)"
+	else:
+		$PlayerHud/Control/Items.text = "Current Objective: Return to Bunker"
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")
@@ -110,6 +115,7 @@ func _physics_process(delta):
 				if Input.is_action_just_pressed("interact"):
 					heal(collider.healthpoints)
 					collider.queue_free()
+					healthpacks = healthpacks + 1
 			elif !collider.is_in_group("health"):
 				pickup_notifier.visible = false
 					

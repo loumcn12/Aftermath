@@ -165,3 +165,15 @@ offset_right = 40.0
 offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("4_qlg0r")
 script = ExtResource("4_dqkch")
+
+[node name="Items" type="Label" parent="PlayerHud/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -481.0
+offset_bottom = 18.0
+grow_horizontal = 0
+size_flags_horizontal = 0
+text = "Current Objective: Collect Medpacks (0/3)"
+label_settings = SubResource("LabelSettings_fjrip")
