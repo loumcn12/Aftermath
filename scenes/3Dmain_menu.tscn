@@ -20,6 +20,7 @@ sky = SubResource("Sky_xdhe3")
 sky_custom_fov = 119.4
 tonemap_mode = 2
 glow_enabled = true
+volumetric_fog_enabled = true
 volumetric_fog_density = 0.06
 volumetric_fog_albedo = Color(0.9, 0.9, 0.9, 1)
 volumetric_fog_emission_energy = 0.0
@@ -55,7 +56,6 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6.1844
 
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 41.2041)
-visible = false
 size = Vector3(25.5293, 2, 343.441)
 material = SubResource("FogMaterial_lsx8b")
 
