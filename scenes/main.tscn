@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://djunwlie6gikb"]
+[gd_scene load_steps=11 format=3 uid="uid://djunwlie6gikb"]
 
 [ext_resource type="Script" uid="uid://dqoh3msg73gs4" path="res://scripts/main.gd" id="1_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://mfmt5fpbaura" path="res://assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="2_76w8b"]
 [ext_resource type="Script" uid="uid://dk2o10mljftys" path="res://scripts/env.gd" id="4_85g3d"]
 [ext_resource type="PackedScene" uid="uid://b5u6tg7siuhu3" path="res://scenes/player.tscn" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cope3wve2dub1" path="res://scenes/pause_menu.tscn" id="5_tefeu"]
-[ext_resource type="PackedScene" uid="uid://cwupnc84odj3m" path="res://scenes/medball.tscn" id="5_tipki"]
 [ext_resource type="PackedScene" uid="uid://bwih58pbrrsi1" path="res://scenes/streetgrid.tscn" id="8_choun"]
 [ext_resource type="PackedScene" uid="uid://ckgmx5fed770t" path="res://scenes/streetlamp.tscn" id="9_ya4ey"]
 
@@ -43,7 +42,7 @@ process_mode = 2
 visible = false
 
 [node name="player" parent="." instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 431.625, 0.726949, 82.9854)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 166.625, 0.726949, 103.985)
 
 [node name="Grid" type="Node3D" parent="."]
 
@@ -85,78 +84,6 @@ transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 50, 0, -
 [node name="Streetlamp12" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 30, 0, -97.75)
 
-[node name="Streetlamp13" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.25, 0, -389.8)
-
-[node name="Streetlamp14" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.25, 0, -369.8)
-
-[node name="Streetlamp15" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.25, 0, -349.8)
-
-[node name="Streetlamp16" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 17.75, 0, -349.8)
-
-[node name="Streetlamp17" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 17.75, 0, -369.8)
-
-[node name="Streetlamp18" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 17.75, 0, -389.8)
-
-[node name="Streetlamp19" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 30, 0, -402.05)
-
-[node name="Streetlamp20" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 50, 0, -402.05)
-
-[node name="Streetlamp21" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 70, 0, -402.05)
-
-[node name="Streetlamp22" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 70, 0, -337.55)
-
-[node name="Streetlamp23" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 50, 0, -337.55)
-
-[node name="Streetlamp24" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 30, 0, -337.55)
-
-[node name="Streetlamp25" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.25, 0, -309.8)
-
-[node name="Streetlamp26" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.25, 0, -289.8)
-
-[node name="Streetlamp27" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.25, 0, -269.8)
-
-[node name="Streetlamp28" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 97.75, 0, -269.8)
-
-[node name="Streetlamp29" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 97.75, 0, -289.8)
-
-[node name="Streetlamp30" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 97.75, 0, -309.8)
-
-[node name="Streetlamp31" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 110, 0, -322.05)
-
-[node name="Streetlamp32" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 130, 0, -322.05)
-
-[node name="Streetlamp33" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 150, 0, -322.05)
-
-[node name="Streetlamp34" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 150, 0, -257.55)
-
-[node name="Streetlamp35" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 130, 0, -257.55)
-
-[node name="Streetlamp36" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 110, 0, -257.55)
-
 [node name="Streetlamp37" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.25, 0, -69.8)
 
@@ -190,329 +117,65 @@ transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 150, 0, 
 [node name="Streetlamp47" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 130, 0, -17.55)
 
+[node name="Streetlamp49" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.25, 0, -149.8)
+
+[node name="Streetlamp50" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.25, 0, -129.8)
+
+[node name="Streetlamp51" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.25, 0, -109.8)
+
+[node name="Streetlamp52" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 97.75, 0, -129.8)
+
+[node name="Streetlamp53" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 97.75, 0, -149.8)
+
+[node name="Streetlamp54" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 110, 0, -162.05)
+
+[node name="Streetlamp55" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 130, 0, -162.05)
+
+[node name="Streetlamp56" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 150, 0, -162.05)
+
+[node name="Streetlamp57" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 150, 0, -97.55)
+
+[node name="Streetlamp58" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 130, 0, -97.55)
+
 [node name="Streetlamp48" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 110, 0, -17.55)
 
-[node name="Streetlamp49" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 242.25, 0, -469.8)
-
-[node name="Streetlamp50" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 242.25, 0, -449.8)
-
-[node name="Streetlamp51" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 242.25, 0, -429.8)
-
-[node name="Streetlamp52" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 177.75, 0, -429.8)
-
-[node name="Streetlamp53" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 177.75, 0, -449.8)
-
-[node name="Streetlamp54" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 177.75, 0, -469.8)
-
-[node name="Streetlamp55" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 190, 0, -482.05)
-
-[node name="Streetlamp56" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 210, 0, -482.05)
-
-[node name="Streetlamp57" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 230, 0, -482.05)
-
-[node name="Streetlamp58" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 230, 0, -417.55)
-
 [node name="Streetlamp59" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 210, 0, -417.55)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.25, 0, -69.8)
 
 [node name="Streetlamp60" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 190, 0, -417.55)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.25, 0, -49.8)
 
 [node name="Streetlamp61" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 242.25, 0, -309.8)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 17.75, 0, -29.8)
 
 [node name="Streetlamp62" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 242.25, 0, -289.8)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 17.75, 0, -49.8)
 
 [node name="Streetlamp63" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 242.25, 0, -269.8)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 50, 0, -82.05)
 
 [node name="Streetlamp64" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 177.75, 0, -269.8)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 70, 0, -82.05)
 
 [node name="Streetlamp65" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 177.75, 0, -289.8)
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 70, 0, -17.55)
 
 [node name="Streetlamp66" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 177.75, 0, -309.8)
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 50, 0, -17.55)
 
 [node name="Streetlamp67" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 190, 0, -322.05)
-
-[node name="Streetlamp68" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 210, 0, -322.05)
-
-[node name="Streetlamp69" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 230, 0, -322.05)
-
-[node name="Streetlamp70" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 230, 0, -257.55)
-
-[node name="Streetlamp71" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 210, 0, -257.55)
-
-[node name="Streetlamp72" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 190, 0, -257.55)
-
-[node name="Streetlamp73" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 242.25, 0, -147.8)
-
-[node name="Streetlamp74" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 242.25, 0, -127.8)
-
-[node name="Streetlamp75" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 242.25, 0, -107.8)
-
-[node name="Streetlamp76" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 177.75, 0, -107.8)
-
-[node name="Streetlamp77" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 177.75, 0, -127.8)
-
-[node name="Streetlamp78" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 177.75, 0, -147.8)
-
-[node name="Streetlamp79" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 190, 0, -160.05)
-
-[node name="Streetlamp80" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 210, 0, -160.05)
-
-[node name="Streetlamp81" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 230, 0, -160.05)
-
-[node name="Streetlamp82" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 230, 0, -95.55)
-
-[node name="Streetlamp83" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 210, 0, -95.55)
-
-[node name="Streetlamp84" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 190, 0, -95.55)
-
-[node name="Streetlamp85" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 322.25, 0, -389.8)
-
-[node name="Streetlamp86" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 322.25, 0, -369.8)
-
-[node name="Streetlamp87" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 322.25, 0, -349.8)
-
-[node name="Streetlamp88" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 257.75, 0, -349.8)
-
-[node name="Streetlamp89" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 257.75, 0, -369.8)
-
-[node name="Streetlamp90" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 257.75, 0, -389.8)
-
-[node name="Streetlamp91" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 270, 0, -402.05)
-
-[node name="Streetlamp92" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 290, 0, -402.05)
-
-[node name="Streetlamp93" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 310, 0, -402.05)
-
-[node name="Streetlamp94" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 310, 0, -337.55)
-
-[node name="Streetlamp95" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 290, 0, -337.55)
-
-[node name="Streetlamp96" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 270, 0, -337.55)
-
-[node name="Streetlamp97" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 402.25, 0, -389.8)
-
-[node name="Streetlamp98" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 402.25, 0, -369.8)
-
-[node name="Streetlamp99" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 402.25, 0, -349.8)
-
-[node name="Streetlamp100" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 337.75, 0, -349.8)
-
-[node name="Streetlamp101" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 337.75, 0, -369.8)
-
-[node name="Streetlamp102" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 337.75, 0, -389.8)
-
-[node name="Streetlamp103" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 350, 0, -402.05)
-
-[node name="Streetlamp104" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 370, 0, -402.05)
-
-[node name="Streetlamp105" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 390, 0, -402.05)
-
-[node name="Streetlamp106" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 390, 0, -337.55)
-
-[node name="Streetlamp107" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 370, 0, -337.55)
-
-[node name="Streetlamp108" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 350, 0, -337.55)
-
-[node name="Streetlamp109" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 402.25, 0, -149.8)
-
-[node name="Streetlamp110" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 402.25, 0, -129.8)
-
-[node name="Streetlamp111" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 402.25, 0, -109.8)
-
-[node name="Streetlamp112" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 337.75, 0, -109.8)
-
-[node name="Streetlamp113" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 337.75, 0, -129.8)
-
-[node name="Streetlamp114" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 337.75, 0, -149.8)
-
-[node name="Streetlamp115" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 350, 0, -162.05)
-
-[node name="Streetlamp116" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 370, 0, -162.05)
-
-[node name="Streetlamp117" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 390, 0, -162.05)
-
-[node name="Streetlamp118" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 390, 0, -97.55)
-
-[node name="Streetlamp119" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 370, 0, -97.55)
-
-[node name="Streetlamp136" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 482.25, 0, -149.8)
-
-[node name="Streetlamp145" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 482.25, 0, -129.8)
-
-[node name="Streetlamp146" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 482.25, 0, -109.8)
-
-[node name="Streetlamp147" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 417.75, 0, -109.8)
-
-[node name="Streetlamp148" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 417.75, 0, -129.8)
-
-[node name="Streetlamp149" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 417.75, 0, -149.8)
-
-[node name="Streetlamp150" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 430, 0, -162.05)
-
-[node name="Streetlamp151" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 470, 0, -97.55)
-
-[node name="Streetlamp152" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 450, 0, -97.55)
-
-[node name="Streetlamp120" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 350, 0, -97.55)
-
-[node name="Streetlamp121" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 402.25, 0, -69.8)
-
-[node name="Streetlamp122" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 402.25, 0, -49.8)
-
-[node name="Streetlamp123" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 402.25, 0, -29.8)
-
-[node name="Streetlamp124" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 337.75, 0, -29.8)
-
-[node name="Streetlamp125" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 337.75, 0, -49.8)
-
-[node name="Streetlamp126" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 337.75, 0, -69.8)
-
-[node name="Streetlamp127" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 350, 0, -82.05)
-
-[node name="Streetlamp128" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 370, 0, -82.05)
-
-[node name="Streetlamp129" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 390, 0, -82.05)
-
-[node name="Streetlamp130" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 390, 0, -17.55)
-
-[node name="Streetlamp131" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 370, 0, -17.55)
-
-[node name="Streetlamp132" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 350, 0, -17.55)
-
-[node name="Streetlamp133" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 482.25, 0, -69.8)
-
-[node name="Streetlamp134" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 482.25, 0, -49.8)
-
-[node name="Streetlamp135" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 482.25, 0, -29.8)
-
-[node name="Streetlamp137" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 417.75, 0, -49.8)
-
-[node name="Streetlamp138" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 417.75, 0, -69.8)
-
-[node name="Streetlamp139" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 430, 0, -82.05)
-
-[node name="Streetlamp140" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 450, 0, -82.05)
-
-[node name="Streetlamp141" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 470, 0, -82.05)
-
-[node name="Streetlamp142" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 470, 0, -17.55)
-
-[node name="Streetlamp143" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 450, 0, -17.55)
-
-[node name="Streetlamp144" parent="Grid/streetgrid" instance=ExtResource("9_ya4ey")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 430, 0, -17.55)
-
-[node name="medball" parent="." instance=ExtResource("5_tipki")]
-transform = Transform3D(0.505717, 0, 0, 0, 0.505717, 0, 0, 0, 0.505717, 452.875, 0.505717, -90.609)
-
-[node name="medball2" parent="." instance=ExtResource("5_tipki")]
-transform = Transform3D(0.505717, 0, 0, 0, 0.505717, 0, 0, 0, 0.505717, 410.527, 0.505717, -36.8316)
-
-[node name="medball3" parent="." instance=ExtResource("5_tipki")]
-transform = Transform3D(0.507937, 0, 0, 0, 0.507937, 0, 0, 0, 0.507937, 464.985, 0.505718, -13.6105)
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 30, 0, -17.55)
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 469, 0, -64)

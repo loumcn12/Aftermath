@@ -11,38 +11,22 @@ var paused = false
 # Coordinates for each building size
 var tile_origins := {
 	"1x1": [
-		{ "position": Vector3(30, 0, -30), "rotation": Vector3(0, 0, 0) },
-		{ "position": Vector3(50, 0, -70), "rotation": Vector3(0, 90, 0) },
-		{ "position": Vector3(50, 0, -30), "rotation": Vector3(0, 90, 0) },
-		{ "position": Vector3(30, 0, -190), "rotation": Vector3(0, 0, 0) },
-		{ "position": Vector3(30, 0, -210), "rotation": Vector3(0, 0, 0) },
-		{ "position": Vector3(30, 0, -230), "rotation": Vector3(0, 0, 0) },
-		{ "position": Vector3(70, 0, -270), "rotation": Vector3(0, 180, 0) },
-		{ "position": Vector3(470, 0, -30), "rotation": Vector3(0, 0, 0) }
+		{ "position": Vector3(0, 0, 0), "rotation": Vector3(0, 0, 0) },
 	],
 	"2x1": [
-		{ "position": Vector3(30, 0, -60), "rotation": Vector3(0, 0, 0) },
-		{ "position": Vector3(70, 0, -140), "rotation": Vector3(0, 180, 0) },
-		{ "position": Vector3(40, 0, -270), "rotation": Vector3(0, 90, 0) },
-		{ "position": Vector3(60, 0, -470), "rotation": Vector3(0, -90, 0) },
-		{ "position": Vector3(470, 0, -60), "rotation": Vector3(0, 180, 0) }
+		
 	],
 	"2x2": [
-		{ "position": Vector3(40, 0, -140), "rotation": Vector3(0, 0, 0) },
-		{ "position": Vector3(60, 0, -440), "rotation": Vector3(0, 180, 0) }
+		
 	],
 	"3x1": [
-		{ "position": Vector3(70, 0, -50), "rotation": Vector3(0, 180, 0) },
-		{ "position": Vector3(50, 0, -110), "rotation": Vector3(0, -90, 0) },
-		{ "position": Vector3(30, 0, -450), "rotation": Vector3(0, 0, 0) }
+		
 	],
 	"3x2": [
-		{ "position": Vector3(60, 0, -210), "rotation": Vector3(0, 180, 0) },
-		{ "position": Vector3(50, 0, -300), "rotation": Vector3(0, -90, 0) },
-		{ "position": Vector3(440, 0, -50), "rotation": Vector3(0, 180, 0) }
+		
 	],
 	"3x3": [
-		{ "position": Vector3(50, 0, -370), "rotation": Vector3(0, 0, 0) }
+		
 	]
 }
 

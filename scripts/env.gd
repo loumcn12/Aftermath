@@ -1,8 +1,8 @@
 extends Node3D
 
-@export var cycle_duration: float = 20.0
-@export var day_pause: float = 10.0
-@export var night_pause: float = 1.0
+@export var cycle_duration: float = 60.0
+@export var day_pause: float = 180.0
+@export var night_pause: float = 30.0
 @export var pause_threshold: float = 0.001
 
 
