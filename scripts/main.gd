@@ -11,16 +11,16 @@ var paused = false
 # Coordinates for each building size
 var tile_origins := {
 	"1x1": [
-		{ "position": Vector3(0, 0, 0), "rotation": Vector3(0, 0, 0) },
+		#{ "position": Vector3(140, 0, 0), "rotation": Vector3(0, 0, 0) }
 	],
 	"2x1": [
-		
+		{ "position": Vector3(140, 0, -30), "rotation": Vector3(0, 90, 0) }
 	],
 	"2x2": [
 		
 	],
 	"3x1": [
-		
+		{ "position": Vector3(110, 0, 50), "rotation": Vector3(0, 0, 0) }
 	],
 	"3x2": [
 		
