@@ -16,7 +16,7 @@ extends CharacterBody3D
 # Speed variables
 var current_speed = 5.0
 const walking_speed = 5.0
-const sprinting_speed = 8.0
+const sprinting_speed = 28.0
 const crouching_speed = 3.0
 
 

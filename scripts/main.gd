@@ -11,19 +11,28 @@ var paused = false
 # Coordinates for each building size
 var tile_origins := {
 	"1x1": [
-		#{ "position": Vector3(140, 0, 0), "rotation": Vector3(0, 0, 0) }
+		{ "position": Vector3(150, 0, -110), "rotation": Vector3(0, 180, 0) },
+		{ "position": Vector3(30, 0, -110), "rotation": Vector3(0, 90, 0)},
+		{ "position": Vector3(70, 0, -150), "rotation": Vector3(0, -90, 0)},
+		{ "position": Vector3(50, 0, -150), "rotation": Vector3(0, -90, 0)}
 	],
 	"2x1": [
-		{ "position": Vector3(140, 0, -30), "rotation": Vector3(0, 90, 0) }
+		{ "position": Vector3(140, 0, -30), "rotation": Vector3(0, 90, 0) },
+		{ "position": Vector3(150, 0, -140), "rotation": Vector3(0, 180, 0) },
+		{ "position": Vector3(30, 0, -140), "rotation": Vector3(0, 0, 0) },
+		{ "position": Vector3(70, 0, -60), "rotation": Vector3(0, 180, 0)}
 	],
 	"2x2": [
-		
+		{ "position": Vector3(140, 0, -60), "rotation": Vector3(0, 180, 0) },
+		{ "position": Vector3(60, 0, -120), "rotation": Vector3(0, 90, 0)},
+		{ "position": Vector3(40, 0, -60), "rotation": Vector3(0, 0, 0)}
 	],
 	"3x1": [
-		{ "position": Vector3(110, 0, 50), "rotation": Vector3(0, 0, 0) }
+		{ "position": Vector3(110, 0, -50), "rotation": Vector3(0, 0, 0) },
+		{ "position": Vector3(50, 0, -30), "rotation": Vector3(0, -90, 0) }
 	],
 	"3x2": [
-		
+		{ "position": Vector3(120, 0, -130), "rotation": Vector3(0, 0, 0) }
 	],
 	"3x3": [
 		
