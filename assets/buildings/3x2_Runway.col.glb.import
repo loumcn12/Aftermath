@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://s7gmcceeervd"
-path="res://.godot/imported/3x2_Runway.col.glb-264345676a6929224ff50f08bfef7a26.scn"
+valid=false
 
 [deps]
 
 source_file="res://assets/buildings/3x2_Runway.col.glb"
-dest_files=["res://.godot/imported/3x2_Runway.col.glb-264345676a6929224ff50f08bfef7a26.scn"]
 
 [params]
 
