@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://h8aha1kpxejb"]
+[gd_scene load_steps=3 format=3 uid="uid://h8aha1kpxejb"]
 
 [ext_resource type="PackedScene" uid="uid://66e3e238glt0" path="res://assets/buildings/1x1_Apartments.col.glb" id="1_rp1py"]
+[ext_resource type="PackedScene" uid="uid://cwupnc84odj3m" path="res://scenes/medball.tscn" id="2_qctjx"]
 
 [node name="1x1_Apartments" type="Node3D"]
 
 [node name="1x1_Apartments" parent="." instance=ExtResource("1_rp1py")]
+
+[node name="medball" parent="." instance=ExtResource("2_qctjx")]
+transform = Transform3D(-2.21056e-08, 0, -0.505717, 0, 0.505717, 0, 0.505717, 0, -2.21056e-08, -6.64125, 0.232699, -3.40202)

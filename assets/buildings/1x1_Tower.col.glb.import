@@ -3,12 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b5v807gr6xf0k"
-valid=false
+uid="uid://0af5lwliuqu3"
+path="res://.godot/imported/1x1_Tower.col.glb-422d56f856343736b32b957e99592d94.scn"
 
 [deps]
 
 source_file="res://assets/buildings/1x1_Tower.col.glb"
+dest_files=["res://.godot/imported/1x1_Tower.col.glb-422d56f856343736b32b957e99592d94.scn"]
 
 [params]
 

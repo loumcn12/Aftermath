@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://oti4q5cqsxjk"]
+[gd_scene load_steps=3 format=3 uid="uid://oti4q5cqsxjk"]
 
 [ext_resource type="PackedScene" uid="uid://i1mwg753agsi" path="res://assets/buildings/1x1_Waccas.col.glb" id="1_ba5qe"]
+[ext_resource type="PackedScene" uid="uid://cwupnc84odj3m" path="res://scenes/medball.tscn" id="2_4as2j"]
 
 [node name="1x1_Waccas" type="Node3D"]
 
 [node name="1x1_Waccas" parent="." instance=ExtResource("1_ba5qe")]
+
+[node name="medball" parent="." instance=ExtResource("2_4as2j")]
+transform = Transform3D(0.505717, 0, 0, 0, 0.505717, 0, 0, 0, 0.505717, -3.08019, 0.196775, 3.6555)

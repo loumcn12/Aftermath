@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnb0vfc56u5pd"]
+[gd_scene load_steps=3 format=3 uid="uid://cnb0vfc56u5pd"]
 
 [ext_resource type="PackedScene" uid="uid://bsnqylebv165" path="res://assets/buildings/1x1_Bunker.col.glb" id="1_3ublb"]
+[ext_resource type="PackedScene" uid="uid://cwupnc84odj3m" path="res://scenes/medball.tscn" id="2_dv7rc"]
 
 [node name="1x1_Bunker" type="Node3D"]
 
 [node name="1x1_Bunker" parent="." instance=ExtResource("1_3ublb")]
+
+[node name="medball" parent="." instance=ExtResource("2_dv7rc")]
+transform = Transform3D(0.505717, 0, 0, 0, 0.505717, 0, 0, 0, 0.505717, -8, 0.2, -3)

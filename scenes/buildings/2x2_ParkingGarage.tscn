@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://j4rusxv7mfe3"]
+[gd_scene load_steps=3 format=3 uid="uid://j4rusxv7mfe3"]
 
 [ext_resource type="PackedScene" uid="uid://m4mwg537sm6x" path="res://assets/buildings/2x2_ParkingGarage.col.glb" id="1_dcha6"]
+[ext_resource type="PackedScene" uid="uid://cwupnc84odj3m" path="res://scenes/medball.tscn" id="2_n1yce"]
 
 [node name="2x2_ParkingGarage" type="Node3D"]
 
 [node name="2x2_ParkingGarage" parent="." instance=ExtResource("1_dcha6")]
+
+[node name="medball" parent="." instance=ExtResource("2_n1yce")]
+transform = Transform3D(0.505717, 0, 0, 0, 0.505717, 0, 0, 0, 0.505717, 0, 37, 0)

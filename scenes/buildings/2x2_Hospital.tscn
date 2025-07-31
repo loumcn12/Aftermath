@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://xxhgs44cfxg2"]
+[gd_scene load_steps=3 format=3 uid="uid://xxhgs44cfxg2"]
 
 [ext_resource type="PackedScene" uid="uid://s1bv3g5q2p18" path="res://assets/buildings/2x2_Hospital.col.glb" id="1_y4cdf"]
+[ext_resource type="PackedScene" uid="uid://cwupnc84odj3m" path="res://scenes/medball.tscn" id="2_ggyfn"]
 
 [node name="2x2_Hospital" type="Node3D"]
 
 [node name="2x2_Hospital" parent="." instance=ExtResource("1_y4cdf")]
+
+[node name="medball" parent="." instance=ExtResource("2_ggyfn")]
+transform = Transform3D(0.505717, 0, 0, 0, 0.505717, 0, 0, 0, 0.505717, -1, 0.4, 1)
