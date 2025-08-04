@@ -11,12 +11,12 @@
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_85g3d"]
 panorama = ExtResource("2_76w8b")
 
-[sub_resource type="Sky" id="Sky_85g3d"]
+[sub_resource type="Sky" id="Sky_o6xl0"]
 sky_material = SubResource("PanoramaSkyMaterial_85g3d")
 
 [sub_resource type="Environment" id="Environment_7jrki"]
 background_mode = 2
-sky = SubResource("Sky_85g3d")
+sky = SubResource("Sky_o6xl0")
 glow_enabled = true
 volumetric_fog_density = 0.1
 volumetric_fog_albedo = Color(0.9, 0.9, 0.9, 1)

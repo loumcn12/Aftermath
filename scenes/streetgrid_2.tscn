@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ijqwged6h284"]
+
+[ext_resource type="PackedScene" uid="uid://cnl0r8vgjqo0r" path="res://assets/World/streetgriddos.glb" id="1_15sxh"]
+
+[node name="streetgrid2" type="Node3D"]
+
+[node name="streetgriddos" parent="." instance=ExtResource("1_15sxh")]

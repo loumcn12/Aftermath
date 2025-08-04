@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://bk4iy1cib0uuo"]
+
+[ext_resource type="Script" uid="uid://bybsgu8rvqxxc" path="res://scripts/level_2.gd" id="1_alqfr"]
+[ext_resource type="Script" uid="uid://dk2o10mljftys" path="res://scripts/env.gd" id="2_yqkch"]
+[ext_resource type="Texture2D" uid="uid://mfmt5fpbaura" path="res://assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="3_6ep0u"]
+[ext_resource type="PackedScene" uid="uid://cope3wve2dub1" path="res://scenes/pause_menu.tscn" id="4_hrcei"]
+[ext_resource type="PackedScene" uid="uid://b5u6tg7siuhu3" path="res://scenes/player.tscn" id="5_xa7n4"]
+[ext_resource type="PackedScene" uid="uid://ijqwged6h284" path="res://scenes/streetgrid_2.tscn" id="6_yqkch"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bo4dx"]
+panorama = ExtResource("3_6ep0u")
+
+[sub_resource type="Sky" id="Sky_85g3d"]
+sky_material = SubResource("PanoramaSkyMaterial_bo4dx")
+
+[sub_resource type="Environment" id="Environment_76toy"]
+background_mode = 2
+sky = SubResource("Sky_85g3d")
+glow_enabled = true
+volumetric_fog_density = 0.1
+volumetric_fog_albedo = Color(0.9, 0.9, 0.9, 1)
+volumetric_fog_emission_energy = 0.0
+volumetric_fog_ambient_inject = 0.5
+volumetric_fog_sky_affect = 0.6
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_alqfr")
+
+[node name="env" type="Node3D" parent="."]
+script = ExtResource("2_yqkch")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
+environment = SubResource("Environment_76toy")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="env"]
+shadow_enabled = true
+
+[node name="PauseMenu" parent="." instance=ExtResource("4_hrcei")]
+process_mode = 2
+visible = false
+
+[node name="player" parent="." instance=ExtResource("5_xa7n4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 218.625, -8.27305, -12.015)
+
+[node name="streetgrid2" parent="." instance=ExtResource("6_yqkch")]
+
+[node name="Streetgrid" type="Node3D" parent="."]
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140, 0, -150)
