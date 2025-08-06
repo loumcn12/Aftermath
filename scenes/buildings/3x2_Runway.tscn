@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://fwi45wvex2il"]
 
-[ext_resource type="PackedScene" uid="uid://s7gmcceeervd" path="res://assets/buildings/3x2_Runway.col.glb" id="1_weda2"]
+[ext_resource type="PackedScene" uid="uid://bkar63t050xsw" path="res://assets/buildings/3x2_Runway.glb" id="1_weda2"]
 
 [node name="3x2_Runway" type="Node3D"]
 

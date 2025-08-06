@@ -12,19 +12,23 @@ var paused = false
 var tile_origins := {
 	"1x1": [
 		{ "position": Vector3(150, 0, -130), "rotation": Vector3(0, 180, 0) },
-		
+		{ "position": Vector3(70, 0, -210), "rotation": Vector3(0, 180, 0) },
+		{ "position": Vector3(70, 0, -230), "rotation": Vector3(0, 180, 0) },
+		{ "position": Vector3(50, 0, -230), "rotation": Vector3(0, -90, 0) },
+		{ "position": Vector3(130, 0, -30), "rotation": Vector3(0, 90, 0) },
 	],
 	"2x1": [
 		{ "position": Vector3(140, 0, -150), "rotation": Vector3(0, -90, 0) },
+		{ "position": Vector3(110, 0, -40), "rotation": Vector3(0, 0, 0) },
 	],
 	"2x2": [
 		
 	],
 	"3x1": [
-		
+		{ "position": Vector3(30, 0, -50), "rotation": Vector3(0, 0, 0) }
 	],
 	"3x2": [
-		
+		{ "position": Vector3(60, 0, -50), "rotation": Vector3(0, 180, 0) },
 	],
 	"3x3": [
 		{"position": Vector3(130, 0, -210), "rotation": Vector3(0, 0, 0)}
@@ -101,7 +105,7 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("escape"):
 		pauseMenu()
 
-	if player.position.y < -5:
+	if player.position.y < -10:
 		player._Damage(player.position.y * -0.008)
 
 func pauseMenu():

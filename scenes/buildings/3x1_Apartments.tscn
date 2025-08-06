@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://xgtrl5roe40q"]
 
-[ext_resource type="PackedScene" uid="uid://csmm45ip6yv5m" path="res://assets/buildings/3x1_Apartments.col.glb" id="1_rh4u2"]
+[ext_resource type="PackedScene" uid="uid://balb78vqree7q" path="res://assets/buildings/3x1_Apartments.glb" id="1_rh4u2"]
 
 [node name="3x1_Apartments" type="Node3D"]
 
