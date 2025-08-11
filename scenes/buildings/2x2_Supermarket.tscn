@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://d4d6tfte17ume"]
+[gd_scene load_steps=3 format=3 uid="uid://d4d6tfte17ume"]
 
 [ext_resource type="PackedScene" uid="uid://b3oleg3gi8h34" path="res://assets/buildings/2x2_Supermarket.col.glb" id="1_qow40"]
+[ext_resource type="PackedScene" uid="uid://cwupnc84odj3m" path="res://scenes/medball.tscn" id="2_by52l"]
 
 [node name="2x2_Supermarket" type="Node3D"]
 
 [node name="2x2_Supermarket" parent="." instance=ExtResource("1_qow40")]
+
+[node name="medball" parent="." instance=ExtResource("2_by52l")]
+transform = Transform3D(-5.72135e-09, -0.488485, -0.130889, -2.13524e-08, 0.130889, -0.488485, 0.505717, 0, -2.21056e-08, 4.8, 1.6, 0)

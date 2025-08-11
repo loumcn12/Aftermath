@@ -1,7 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://xgtrl5roe40q"]
+[gd_scene load_steps=4 format=3 uid="uid://xgtrl5roe40q"]
 
 [ext_resource type="PackedScene" uid="uid://balb78vqree7q" path="res://assets/buildings/3x1_Apartments.glb" id="1_rh4u2"]
+[ext_resource type="PackedScene" uid="uid://cwupnc84odj3m" path="res://scenes/medball.tscn" id="2_mo36e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rh4u2"]
+size = Vector3(5, 0.0683594, 2.85522)
 
 [node name="3x1_Apartments" type="Node3D"]
 
 [node name="3x1_Apartments" parent="." instance=ExtResource("1_rh4u2")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="3x1_Apartments"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 25)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="3x1_Apartments/StaticBody3D"]
+transform = Transform3D(0.827483, 0.561011, 0.0232242, -0.561325, 0.827537, 0.0098816, -0.0136752, -0.0212132, 0.999681, -1.5977, 1.38322, 0.332514)
+shape = SubResource("BoxShape3D_rh4u2")
+
+[node name="medball" parent="." instance=ExtResource("2_mo36e")]
+transform = Transform3D(0.505717, 0, 0, 0, 0.505717, 0, 0, 0, 0.505717, 2, 0.2, 25)

@@ -1,11 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://h8aha1kpxejb"]
+[gd_scene load_steps=4 format=3 uid="uid://h8aha1kpxejb"]
 
-[ext_resource type="PackedScene" uid="uid://66e3e238glt0" path="res://assets/buildings/1x1_Apartments.col.glb" id="1_rp1py"]
+[ext_resource type="PackedScene" uid="uid://c50wieh46oqng" path="res://assets/buildings/1x1_Apartments.col.glb" id="1_rp1py"]
 [ext_resource type="PackedScene" uid="uid://cwupnc84odj3m" path="res://scenes/medball.tscn" id="2_qctjx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qctjx"]
+size = Vector3(5, 0.0683594, 2.85522)
 
 [node name="1x1_Apartments" type="Node3D"]
 
 [node name="1x1_Apartments" parent="." instance=ExtResource("1_rp1py")]
 
 [node name="medball" parent="." instance=ExtResource("2_qctjx")]
-transform = Transform3D(-2.21056e-08, 0, -0.505717, 0, 0.505717, 0, 0.505717, 0, -2.21056e-08, -6.64125, 0.232699, -3.40202)
+transform = Transform3D(-2.21056e-08, 0, -0.505717, 0, 0.505717, 0, 0.505717, 0, -2.21056e-08, -6.64125, 0.197584, -0.422695)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.90596, 0, 9)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.827483, 0.561011, 0.0232242, -0.561325, 0.827537, 0.0098816, -0.0136752, -0.0212132, 0.999681, -1.5977, 1.38322, 0.332514)
+shape = SubResource("BoxShape3D_qctjx")
