@@ -66,7 +66,7 @@ var player_height = 1.8
 
 # Input variables
 var direction = Vector3.ZERO
-const mouse_sens = 0.25
+var mouse_sens = Globalscript.mouse_sens
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
