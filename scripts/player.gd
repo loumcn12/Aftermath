@@ -91,6 +91,7 @@ func _input(event):
 		rotate_y(deg_to_rad(-event.relative.x * mouse_sens))
 		head.rotate_x(deg_to_rad(-event.relative.y * mouse_sens))
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(80))
+		mouse_sens = Globalscript.mouse_sens
 	if Input.is_action_just_pressed("DamageTest"):
 		_Damage(20)
 	if Input.is_action_just_pressed("reset"):

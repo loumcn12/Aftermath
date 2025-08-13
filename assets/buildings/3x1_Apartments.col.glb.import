@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://balb78vqree7q"
-path="res://.godot/imported/3x1_Apartments.glb-1ddd7ab80609a9cd695beb5e017669c3.scn"
+uid="uid://dlfodisfyfj4l"
+path="res://.godot/imported/3x1_Apartments.col.glb-95a02c02eeda5c69d3f5423a43cb1281.scn"
 
 [deps]
 
-source_file="res://assets/buildings/3x1_Apartments.glb"
-dest_files=["res://.godot/imported/3x1_Apartments.glb-1ddd7ab80609a9cd695beb5e017669c3.scn"]
+source_file="res://assets/buildings/3x1_Apartments.col.glb"
+dest_files=["res://.godot/imported/3x1_Apartments.col.glb-95a02c02eeda5c69d3f5423a43cb1281.scn"]
 
 [params]
 
@@ -32,13 +32,6 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"nodes": {
-"PATH:3x1_Apatments": {
-"generate/physics": true,
-"physics/shape_type": 2
-}
-}
-}
+_subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

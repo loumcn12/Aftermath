@@ -54,3 +54,7 @@ func _on_back_button_pressed() -> void:
 		$"../OptionsMenu".visible = false
 	else:
 		pausemenu._cycleMenu()
+
+
+func _on_h_slider_value_changed(value: float) -> void:
+	Globalscript.mouse_sens = value * 0.005

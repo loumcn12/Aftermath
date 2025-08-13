@@ -117,14 +117,10 @@ layout_mode = 2
 text = "Mouse Sensitivity"
 label_settings = SubResource("LabelSettings_rjidq")
 
-[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/mouse_sens"]
+[node name="HSlider" type="HSlider" parent="VBoxContainer/mouse_sens"]
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-
-[node name="HSlider" type="HSlider" parent="VBoxContainer/mouse_sens/HSplitContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 3
+value = 50.0
 
 [node name="BackButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -149,4 +145,5 @@ text = "Version 0.0.0"
 label_settings = SubResource("LabelSettings_yy6rg")
 vertical_alignment = 2
 
+[connection signal="value_changed" from="VBoxContainer/mouse_sens/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
