@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2ueo2bkcreb1"]
+
+[ext_resource type="PackedScene" uid="uid://clt6ali1qloqt" path="res://assets/Misc/Uranium.glb" id="1_d8v85"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_d8v85"]
+height = 0.397949
+radius = 0.0878906
+
+[node name="Uranium" type="StaticBody3D" groups=["uranium"]]
+
+[node name="Uranium" parent="." groups=["uranium"] instance=ExtResource("1_d8v85")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.811706, 0.584065, 0, -0.584065, 0.811706, 0, 0, 0, 1, 0.0680906, 0.093226, 0)
+shape = SubResource("CylinderShape3D_d8v85")

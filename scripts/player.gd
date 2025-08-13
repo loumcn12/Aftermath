@@ -12,6 +12,7 @@ extends CharacterBody3D
 @onready var ray = $neck/Head/eyes/Camera3D/Interactioncast
 @onready var pickup_notifier = $PlayerHud/Control/pickup_notifier
 @onready var punch_notifier = $PlayerHud/Control/punch_notifier
+@onready var fuel_notifier = $PlayerHud/Control/fuel_notifier
 
 # Speed variables
 var current_speed = 5.0
@@ -33,6 +34,7 @@ const BaseRecharge = 20
 var walking = false
 var sprinting = false
 var crouching = false
+var Uranium = false
 
 # Stats
 
@@ -98,10 +100,17 @@ func _input(event):
 		reset()
 
 func _physics_process(delta):
-	if healthpacks < 3:
-		$PlayerHud/Control/Items.text = "Current Objective: Collect Medpacks (" + str(healthpacks) + "/3)"
-	else:
-		$PlayerHud/Control/Items.text = "Current Objective: Return to Bunker"
+	if Globalscript.currentLevel == 1:
+		if healthpacks < 3:
+			$PlayerHud/Control/Items.text = "Current Objective: Collect Medpacks (" + str(healthpacks) + "/3)"
+		else:
+			$PlayerHud/Control/Items.text = "Current Objective: Return to Bunker"
+	elif Globalscript.currentLevel == 2:
+		if Uranium == false:
+			$PlayerHud/Control/Items.text = "Current Objective: Find Nuclear Fuel"
+		if Uranium:
+			$PlayerHud/Control/Items.text = "Current Objective: Restart Nuclear Plant"
+		
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")
@@ -127,6 +136,11 @@ func _physics_process(delta):
 					collider._damage(10)
 			elif !collider.is_in_group("enemy"):
 				punch_notifier.visible = false
+				
+			elif collider.is_in_group("uranium"):
+				fuel_notifier.visible = true
+				if Input.is_action_just_pressed("interact"):
+					collider.queue_free()
 	else:
 		pickup_notifier.visible = false
 		punch_notifier.visible = false

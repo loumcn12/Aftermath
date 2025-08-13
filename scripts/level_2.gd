@@ -46,6 +46,7 @@ func _ready() -> void:
 	paused = false
 	load_building_models()
 	place_buildings()
+	Globalscript.currentLevel = 2
 	
 func load_building_models():
 	var building_files = [

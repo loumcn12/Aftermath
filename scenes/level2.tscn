@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bk4iy1cib0uuo"]
+[gd_scene load_steps=12 format=3 uid="uid://bk4iy1cib0uuo"]
 
 [ext_resource type="Script" uid="uid://bybsgu8rvqxxc" path="res://scripts/level_2.gd" id="1_alqfr"]
 [ext_resource type="Script" uid="uid://dk2o10mljftys" path="res://scripts/env.gd" id="2_yqkch"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b5u6tg7siuhu3" path="res://scenes/player.tscn" id="5_xa7n4"]
 [ext_resource type="PackedScene" uid="uid://ijqwged6h284" path="res://scenes/streetgrid_2.tscn" id="6_yqkch"]
 [ext_resource type="PackedScene" uid="uid://ckgmx5fed770t" path="res://scenes/streetlamp.tscn" id="7_6ep0u"]
+[ext_resource type="PackedScene" uid="uid://d2ueo2bkcreb1" path="res://scenes/uranium.tscn" id="8_hrcei"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bo4dx"]
 panorama = ExtResource("3_6ep0u")
@@ -185,3 +186,6 @@ transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 30, 0, -
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130, 0, -30)
+
+[node name="Uranium" parent="." instance=ExtResource("8_hrcei")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.1999, 0.531602, -117.815)
