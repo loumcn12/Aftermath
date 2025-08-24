@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bk4iy1cib0uuo"]
+[gd_scene load_steps=13 format=3 uid="uid://bk4iy1cib0uuo"]
 
 [ext_resource type="Script" uid="uid://bybsgu8rvqxxc" path="res://scripts/level_2.gd" id="1_alqfr"]
 [ext_resource type="Script" uid="uid://dk2o10mljftys" path="res://scripts/env.gd" id="2_yqkch"]
@@ -26,6 +26,10 @@ volumetric_fog_emission_energy = 0.0
 volumetric_fog_ambient_inject = 0.5
 volumetric_fog_sky_affect = 0.6
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_hrcei"]
+height = 8089.5
+radius = 1.0
+
 [node name="World" type="Node3D"]
 script = ExtResource("1_alqfr")
 
@@ -37,6 +41,22 @@ environment = SubResource("Environment_76toy")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="env"]
 shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="env"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="env/StaticBody3D"]
+transform = Transform3D(-1.55779e-08, 0.00710659, -1.40711, -0.504, -4.3931e-10, 0, -1.55779e-08, 0.00710659, 1.40711, 92.4311, 0.100002, -137.569)
+shape = SubResource("CylinderShape3D_hrcei")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="env/StaticBody3D"]
+transform = Transform3D(-1.03853e-08, 0.00710659, -1.40711, -0.336, -4.3931e-10, 0, -1.03853e-08, 0.00710659, 1.40711, 149.524, 1.63669e-06, -80.4763)
+shape = SubResource("CylinderShape3D_hrcei")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="env/StaticBody3D"]
+transform = Transform3D(-1.03853e-08, 0.00710659, -1.40711, -0.336, -4.3931e-10, 0, -1.03853e-08, 0.00710659, 1.40711, 35.5238, 1.63669e-06, -194.476)
+shape = SubResource("CylinderShape3D_hrcei")
 
 [node name="PauseMenu" parent="." instance=ExtResource("4_hrcei")]
 process_mode = 2
