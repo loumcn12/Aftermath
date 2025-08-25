@@ -1,4 +1,4 @@
-extends CharacterBody3D
+extends StairsCharacter3D
 
 # Player nodes
 @onready var player = $"."
@@ -276,7 +276,7 @@ func _physics_process(delta):
 	# Update the previous floor state
 	was_on_floor_last_frame = is_on_floor()
 
-	move_and_slide()
+	move_and_stair_step()
 
 func _Damage(Damage: float) -> void:
 	Health -= Damage

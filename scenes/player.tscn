@@ -6,7 +6,8 @@
 [ext_resource type="Script" uid="uid://bmckmosxruiu" path="res://scripts/fps_label.gd" id="4_dqkch"]
 [ext_resource type="FontFile" uid="uid://c71hixmpr8htu" path="res://assets/Misc/VCR_OSD_MONO_1.001.ttf" id="4_qlg0r"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tevmw"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qlg0r"]
+margin = 0.01
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m04g1"]
 height = 1.2
@@ -19,14 +20,17 @@ font_size = 20
 font = ExtResource("4_qlg0r")
 font_size = 20
 
-[node name="player" type="CharacterBody3D" groups=["player"]]
+[node name="player" type="StairsCharacter3D" groups=["player"]]
+collider = NodePath(".")
+step_height_up = 0.8
+step_height_down = 0.8
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("3_ob08u")
 
 [node name="standing_collision_shape" type="CollisionShape3D" parent="." groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_tevmw")
+shape = SubResource("CylinderShape3D_qlg0r")
 
 [node name="crouching_collision_shape" type="CollisionShape3D" parent="." groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.602376, 0)
@@ -45,6 +49,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 transform = Transform3D(1, 0, 0, 0, 0.994656, -0.103244, 0, 0.103244, 0.994656, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="neck/Head/eyes"]
+current = true
 
 [node name="Interactioncast" type="RayCast3D" parent="neck/Head/eyes/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 0.0540787, -0.998537, 0, 0.998537, 0.0540787, 0, 0, 0)

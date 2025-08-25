@@ -46,7 +46,7 @@ process_mode = 2
 visible = false
 
 [node name="player" parent="." instance=ExtResource("4_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 166.625, 0.726949, 103.985)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 166.625, 0.726949, 33.574)
 
 [node name="Grid" type="Node3D" parent="."]
 
