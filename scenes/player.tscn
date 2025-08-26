@@ -8,6 +8,7 @@
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_qlg0r"]
 margin = 0.01
+height = 1.8
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m04g1"]
 height = 1.2

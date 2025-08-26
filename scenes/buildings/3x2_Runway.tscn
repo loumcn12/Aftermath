@@ -5,3 +5,4 @@
 [node name="3x2_Runway" type="Node3D"]
 
 [node name="3x2_Runway" parent="." instance=ExtResource("1_weda2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
